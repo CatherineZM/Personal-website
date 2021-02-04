@@ -11,23 +11,23 @@
 <body>
     <header>
     <!--nav-->
-    <nav class="navbar">
-        <div class="navbar-background">
-              <ul class="navbar-nav">
-                <li class="logo"><a href="index.html">Mo Zhou</a>
-                <li class="right"><a href="contact.html">Contact Me</a></li>
-                <li class="right"><a href="resume.html">Resume</a></li>
-                <li class="right"><a href="experience.html">Experience</a></li>
-                <li class="right"><a href="education.html">Education</a></li>
-                <li class="right"><a class="active"  href="index.html">Home</a></li>
-              </ul>
-            <div class="intro">
-                <div class="name">Mo (Catherine) Zhou</div>
-                <div class="name-intro"> Electrical and Computer Engineering Student at the University of Toronto</div>
-                <button id="contact-btn" >Contact Me</button>
-            </div>
+    <nav class="nav-container">
+      <div class="navbar-background">
+        <ul class="navbar">
+          <li class="logo"><a href="/index.html">Mo Zhou</a>
+          <li class="right"><a href="subpages/contact.html">Contact Me</a></li>
+          <li class="right"><a href="subpages/resume.html">Resume</a></li>
+          <li class="right"><a href="experience.html">Experience</a></li>
+          <li class="right"><a href="education.html">Education</a></li>
+          <li class="right"><a class="active"  href="/index.html">Home</a></li>
+        </ul>
+        <div class="intro">
+          <div class="name">Mo (Catherine) Zhou</div>
+          <div class="name-intro"> Electrical and Computer Engineering Student at the University of Toronto</div>
+          <button id="contact-btn" >Contact Me</button>
         </div>
-      </nav>
+      </div>
+    </nav>
     <!--nav end-->
     </header>
     <div class="sections">
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="flip-card-back">
-            <h1>Cook Pad</h1>
+            <h3>Cook Pad</h3>
             <p>A project done by a group of 3</p>
             <p>Course project for Programming on the Web</p>
             <p></p>
@@ -61,7 +61,7 @@
             </div>
           </div>
           <div class="flip-card-back">
-            <h1>Girl's eMentorship</h1>
+            <h3>Girl's eMentorship</h3>
             <p>This project encompasses the development of a GEM specific CRM system to 
               include data from all mentees/mentors, committee & board members, partners, donors. 
               Specific emphasis and importance placed on the quality and governance of the data and potentially developing a tool/GUI to easily get analytics</p>
@@ -80,7 +80,7 @@
             </div>
           </div>
           <div class="flip-card-back">
-            <h1>Trip It</h1>
+            <h3>Trip It</h3>
             <p>A project done by a group of 3</p>
             <p>Course project for Design and Communication</p>
             <p>Applied our map to Travel Salesman Problem solving using:</p>
@@ -104,5 +104,17 @@
       <p>Copyright © 2021 Mo Zhou. All rights reserved.</p>
       <p>catherinemo.zhou@mail.utoronto.ca</p>
     </footer>
-</body>
+
+    <script>
+      window.onscroll = function() {scrollFunction()};
+  
+      function scrollFunction() {
+        if (document.body.scrollTop > 620 || document.documentElement.scrollTop > 620) {
+            document.getElementById("navbar").style.opacity = "1.0";
+        } else {
+            document.getElementById("navbar").style.opacity = "0.8";
+        }
+      }
+    </script>
+  </body>
 </html>
