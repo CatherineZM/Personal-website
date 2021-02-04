@@ -104,6 +104,9 @@ body {
     border-style: none;
     opacity: 0.8;
 }
+a{
+    text-decoration:none;
+}
 
 #contact-btn:hover {
     background-color: white;

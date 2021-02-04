@@ -14,11 +14,12 @@ body {
     background-color: white;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 99%;
     list-style-type: none;
     padding: 0;
     overflow: hidden;
     z-index: 9999;
+    margin-right: 3px;
 }
 
 .logo{
@@ -91,6 +92,8 @@ input[type=text], select, textarea {
   
   /* Add a background color and some padding around the form */
   .container {
+    width: 80%;
+    margin:auto;
     margin-top: 70px;
     border-radius: 5px;
     background-color: #f2f2f2;
