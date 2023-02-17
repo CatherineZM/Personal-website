@@ -1,0 +1,66 @@
+.banner{
+    padding-right: 0;
+    padding-left: 0;
+    position: relative;
+    text-align: center;
+}
+
+#bannerImage{
+    width: 100%;
+    background-color:white;
+    opacity: 0.6;
+}
+
+.bannerText{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.bannerText h1{
+    font-size: 3vw;
+    margin-bottom: 1vw;
+}
+
+.bannerText h2{
+    font-size: 2vw;
+    margin-bottom: 2vw;
+}
+
+.bannerText .contactBtn{
+    border-color: #11386e;
+    background-color: #11386e;
+    opacity: 0.8;
+    color: white;
+    font-size: 1.8vw;
+    width: 100%;
+}
+
+.bannerText .contactBtn:hover{
+    border-color: white;
+    background-color: white;
+    opacity: 0.8;
+    color: #11386e;
+    font-size: 1.8vw;
+    width: 100%;
+}
+
+.bannerText .socialBtn{
+    border-color: transparent;
+    background-color: transparent;
+    color: #11386e;
+    font-size: 1.8vw;
+    width: 100%;
+}
+
+.bannerText .socialBtn:hover{
+    border-color: white;
+    background-color: white;
+    opacity: 0.9;
+    color: #11386e;
+    font-size: 1.8vw;
+    width: 100%;
+}

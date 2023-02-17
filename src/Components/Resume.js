@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/resume.css';
 
 import { Document, Page,} from 'react-pdf';
-import NavigationBar from './NavigationBar';
+import NavigationBar from './NavBar';
 import resumePDF from '../img/resume.pdf';
 
 class Resume extends React.Component {

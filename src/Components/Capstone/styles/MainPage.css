@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+.MainBox{
+    background: linear-gradient(300deg,#12c2e9, #c471ed, #f64f59,#F0CB35);
+    background-size: 420% 420%;
+    animation: gradient-animation 15s ease infinite;
+    top:0; 
+    left: 0;  
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+  
+@keyframes gradient-animation {
+0% {
+    background-position: 0% 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0% 50%;
+}
+}
+
+.MainBox .NavBar{
+    box-shadow: none ;
+}
+
+.MainBox .NavBar .MenuBtn svg{
+    height: 5vmin;
+    width: 5vmin;
+}
+
+.NavBarBox{
+    height: 6vh;
+}
+
+.Banner{
+    display: flex;
+    min-height: 94vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleBox{
+    background: transparent;
+}
+
+.title{
+    text-transform: capitalize;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+}
+
+.title h1{
+    font-size: 10vmin;
+    font-weight: bolder;
+}
+
+.title h2{
+    font-size: 5vmin;
+    font-weight: bold;
+}
+
+.Banner .tryBtn{
+    width: 100%;
+    margin-top: 10vmin;
+    font-family: 'Comfortaa', cursive;
+    font-size: 4vmin;
+    font-weight: bold;
+    color: white;
+}
+
+.Banner .tryBtn:hover{
+    text-decoration: underline;
+    box-shadow: none;
+    text-shadow: 2px 2px grey;
+    background-color: transparent;
+}
