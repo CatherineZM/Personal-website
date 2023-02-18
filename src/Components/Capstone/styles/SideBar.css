@@ -1,0 +1,40 @@
+.SideBar .MuiPaper-root{
+    background: linear-gradient(300deg,#12c2e9, #c471ed, #f64f59,#F0CB35);
+    background-size: 420% 420%;
+    animation: gradient-animation 15s ease infinite;
+    top:0; 
+    left: 0;  
+    width: 50vw;
+    color: white;
+}
+
+.SideBar .Close{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8px;
+    color: white;
+}
+
+.SideBar .Close .MuiButtonBase-root{
+    color: white;
+}
+
+.SideBar .MuiDrawer-paper a{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    color: white;
+}
+
+.SideBar .MuiDrawer-paper .MuiListItemIcon-root{
+    color: white;
+}
+
+.SideBar .MuiDivider-root{
+    color: white;
+}
+
+.SideBar .MuiListSubheader-root{
+    background-color: transparent;
+    color: white;
+}
