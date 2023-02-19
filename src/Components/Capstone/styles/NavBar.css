@@ -1,0 +1,17 @@
+.navbar{
+    width: 100%;
+}
+
+.navContainer{
+    height: 4vw;
+}
+
+.logo{
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
