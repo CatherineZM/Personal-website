@@ -17,7 +17,7 @@ class DemoPage extends React.Component {
   render() {
     return (
         <Container maxWidth={false} disableGutters>
-            <NavBar />
+            <NavBar page="demo"/>
         </Container>
     )
   }

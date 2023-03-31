@@ -17,7 +17,7 @@ class App extends React.Component {
           <Route path="/" element={<HomePage />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/value" element={<Capstone />} />
-          <Route path="/value/list" element={<ValuePage />} />
+          <Route path="/value/project" element={<ValuePage />} />
           <Route path="/value/demo" element={<DemoPage />} />
           <Route path="/value/about" element={<AboutUs />} />
         </Routes>

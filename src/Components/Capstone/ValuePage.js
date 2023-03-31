@@ -3,146 +3,38 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Capstone/styles/ValuePage.css';
 
-import { Container, Drawer, Grid, List, ListItemButton, ListItemText, 
-         Typography, Collapse, Card, CardContent, Chip} from '@mui/material';
-
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
+import { Container, Grid, Typography, Alert, AlertTitle, Divider, Button } from '@mui/material';
 
 import NavBar from './Components/NavBar';
-
-const values = ["Achievement", "Benevolence", "Conformity", "Hedonism", "Power",
-                "Security", "Self-Direction", "Stimulation", "Tradition", "Universalism"]
-
-const valueExplanation = [
-  {
-    name: "Achievement",
-    category: "Self-Enhancement",
-    definition: "Personal success through demonstrating competence according to social standards.",
-    example: "Becoming a fund manager is my ultimate goal for my career path.",
-    related: ["success","capability", "ambition", "influence", 
-              "intelligence", "self-respect"]
-  },
-  {
-    name: "Benevolence",
-    category: "Self-Transcendence",
-    definition: "Preservation and enhancement of the people with whom one is in frequent personal contact.",
-    example: "I once helped an injured animal on the street.",
-    related: ["helpfulness", "honesty", "forgiveness", 
-              "loyalty", "responsibility", "friendship"]
-  },
-  {
-    name: "Conformity",
-    category: "Conservation",
-    definition: "Restraint of actions, inclinations, and impulses likely to upset or harm others and violate social expectations or norms.",
-    example: "When I have discussions with my close friends, I always think before I say something so that it doesn't hurt their feelings.",
-    related: ["self-discipline", "obedience"]
-  },
-  {
-    name: "Hedonism",
-    category: "Openness to Change, Self-Enhancement",
-    definition: "Pleasure and sensuous gratification for oneself.",
-    example: "I'd enjoy my day-off lying on the beach.",
-    related: ["pleasure", "enjoy life"]
-  },
-  {
-    name: "Power",
-    category: "Self-Enhancement",
-    definition: "Social status and prestige, control or dominance over people and resources.",
-    example: "I'm always ready to be a team leader in a project.",
-    related: ["authority", "leadership", "dominance", "social power", "wealth"]
-  },
-  {
-    name: "Security",
-    category: "Conservation",
-    definition: "Safety, harmony, and stability of society, of relationships, and of self.",
-    example: "I spend as much time as I can with my family.",
-    related: ["cleanliness", "family security", "national security", 
-              "stability of social order", "reciprocation of favours", 
-              "health", "sense of belonging"]
-  },
-  {
-    name: "Self-Direction",
-    category: "Openness to Change",
-    definition: "Independent thought and action choosing, creating, exploring.",
-    example: "I like to learn to do things for myself.",
-    related: ["creativity", "freedom", "independence", 
-              "curiosity", "choosing your own goals"]
-  },
-  {
-    name: "Stimulation",
-    category: "Openness to Change",
-    definition: "Excitement, novelty, and challenge in life",
-    example: "My dream is to sky-dive once.",
-    related: ["daring activities", "varied life", "exciting life"]
-  },
-  {
-    name: "Tradition",
-    category: "Conservation",
-    definition: "Respect, commitment, and acceptance of the customs and ideas that traditional culture or religion provides.",
-    example: "I think it's very important to treat your elders with respect.",
-    related: ["accepting one's portion in life", "humility", "devoutness",
-              "respect for tradition", "moderation"]
-  },
-  {
-    name: "Universalism",
-    category: "Self-Transcendence",
-    definition: "Understanding, appreciation, tolerance and protection for the welfare of all people and for nature.",
-    example: "I think global warming is a serious issue and we should all prevent that from happening.",
-    related: ["broadmindedness", "wisdom", "social justice",
-              "equality", "a world at peace", "a world of beauty",
-              "unity with nature", "protecting the environment",
-              "inner harmony"]
-  },
-
-]
+import Footer from './Components/Footer';
+import SideBar from './Components/SideBar.component';
+import ModelFlow from './Components/ModelFlow.component';
+import ValueCards from './Components/ValueCards.component';
+import ValuePic from './Components/valueTheory.png';
 
 class ValuePage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      open: false,
-      setOpen: false,
-    }
-  }
 
-  handleClick=(e)=>{
-    const new_open = !this.state.open;
-    this.setState({ open: new_open });
-    this.setState({ setOpen: new_open });
+    }
   }
 
   render() {
     return (
         <Container className="ValueContainer" maxWidth={false} disableGutters>
-          <Grid container rowSpacing={2} columnSpacing={2}>
-            <Grid item xs={12}>
-              <NavBar />
+          <Grid container columnSpacing={2}>
+            <Grid item xs={12} md={12} className="ValueNav">
+              <NavBar page="project"/>
             </Grid>
-            <Grid item xs={3} className="ValueList" >
-              <List component="nav">
-                <ListItemButton>
-                  <ListItemText primary="Introduction to the Values Theory" />
-                </ListItemButton>
-                <ListItemButton onClick={this.handleClick}>
-                  <ListItemText primary="List of Values and Definitions" />
-                  {this.state.open ? <ExpandLess /> : <ExpandMore />}
-                </ListItemButton>
-                <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-                  <List component="div" disablePadding>
-                    {values.map((value, index) => (
-                      <ListItemButton key={index}>
-                        <ListItemText primary={value} />
-                      </ListItemButton>
-                    ))}
-                  </List>
-                </Collapse>
-              </List>
+            <Grid item xs={2} md={3} className="ValueList" >
+              <SideBar />
             </Grid>
-            <Grid item xs={8}>
-              <div>
-                <Typography variant="h4">
-                  Introduction to the Values Theory
+
+            <Grid item xs={9} md={9} className="valueContent">
+              <div id="intro" >
+                <Typography variant="h4" className="sectionTitle">
+                  Introduction to the Values Theory <sup>[1]</sup>
                 </Typography>
                 <Typography variant="body1">
                   The main features of the conception of basic values implicit in the writings of many theorists and researchers as follows:
@@ -160,27 +52,104 @@ class ValuePage extends React.Component {
                     This hierarchical feature of values also distinguishes them from norms and attitudes.</li>
                 </ul>
               </div>
-              <div>
-                <Typography variant="h4">
-                  List of Values and Definitions
+
+              <div id="theory">
+                <Typography variant="h4" className="sectionTitle">
+                  Schwartz's Value Theory <sup>[1][2]</sup>
                 </Typography>
-                {valueExplanation.map((value, index) => (
-                  <Card key={index}>
-                    <CardContent>
-                      <Typography variant="h5">{value.name}</Typography>
-                      <Typography color="text.secondary">{value.category}</Typography>
-                      <Typography variant="body1" sx={{fontWeight: 'bold'}}>Definition:</Typography>
-                      <Typography variant="body1">{value.definition}</Typography>
-                      <Typography variant="body1" sx={{fontWeight: 'bold'}}>Example Statement:</Typography>
-                      <Typography variant="body1">{value.example}</Typography>
-                      <Typography variant="body2" sx={{fontWeight: 'bold'}}>Related Values: </Typography>
-                      {value.related.map((relate, i) => (
-                        <Chip key={i} label={relate} variant="outlined"/>
-                      ))}
-                    </CardContent>
-                  </Card>
-                ))}
+                <Typography variant='body1'>
+                The theory identifies ten motivationally distinct value orientations that people in all cultures recognize, and it specifies the dynamics 
+                of conflict and congruence among these values. It aims to be a unifying theory for the field of human motivation, a way of organizing
+                the different needs, motives, and goals proposed by other theories.
+                </Typography>
+                <img src={ValuePic} alt="value theory"/>
+                <Typography variant="body2" className='referenceInText'>
+                  Theoretical model of relations among ten motivational types of values <sup>[2]</sup>
+                </Typography>
+                <Typography variant="body1">
+                  The conflicts and congruities among all ten basic values yield an integrated structure of values. 
+                  This structure can be summarized with two orthogonal dimensions:
+                  <ul>
+                    <li> <strong>Self-enhancement vs. self-transcendence:</strong>
+                    On this dimension, power and achievement values oppose universalism and benevolence values. 
+                    Both of the former emphasize pursuit of self-interests, whereas both of the latter involve concern 
+                    for the welfare and interests of others.</li>
+                    <li><strong>Openness to change vs. conservation:</strong>
+                    On this dimension, self-direction and stimulation values oppose security, conformity and tradition values. 
+                    Both of the former emphasize independent action, thought and feeling and readiness for new experience, 
+                    whereas all of the latter emphasize self-restriction, order and resistance to change. 
+                    </li>
+                    <li>Hedonism shares elements of both openness and self-enhancement.</li>
+                  </ul> 
+                </Typography>
               </div>
+              
+              <div>
+                <Typography variant="h4" className="sectionTitle">
+                  List of Values and Definitions <sup>[1][2]</sup>
+                </Typography>
+                <Typography variant='body1'>
+                  To explain what each value means and show examples, here is the list of value:
+                </Typography>
+                <ValueCards />
+              </div>
+              
+              <div id="structure">
+                <Typography variant="h4" className="sectionTitle">
+                  System Overview
+                </Typography>
+                <Typography variant="body1">
+                  The following flow diagram demonstrates the system overview of our model. Starting with receiving the user input, 
+                  the product will first covert the user input into machine understandable word vectors. The word vector is then passed
+                  into our models. There are 10 binary classification models corresponding to 10 different values. The 10 models have identical
+                  structures which is a GPT2 classifier with a CNN head. 
+                  <br/><br/>
+                  To read more about GPT2, please refer to <a href="https://huggingface.co/docs/transformers/model_doc/gpt2">here</a>.
+                </Typography>
+                <ModelFlow className="model"/>
+              </div>
+              
+              <div id="useful">
+                <Typography variant="h4"  className="sectionTitle">
+                  How is Our Product Useful?
+                </Typography>
+                <Typography variant="body1">
+                  The product is useful because it can be used as an evidence for motivational interviewing.
+                  <Alert severity="info">
+                    <AlertTitle><h5>Motivational Interview <sup>[3]</sup></h5></AlertTitle>
+                    <p>Motivational interviewing is a collaborative, goal-oriented style of communication with particular attention to the language of change. 
+                    It is designed to strengthen personal motivation for and commitment to a specific goal by eliciting and exploring the person’s own reasons for change within an atmosphere of acceptance and compassion.
+                    </p>
+                  </Alert>
+                  As the motivational interviewing techniques can be used in the following scenarios: <sup>[4]</sup>
+                  <ul>
+                    <li>Medication adherence</li>
+                    <li>Management of the SNAP (smoking, nutrition, alcohol and physical activity) risk factors</li>
+                    <li>Engagement in prevention or management programs for diabetes or cardiovascular health </li>
+                    <li>Management of substance abuse problems</li>
+                    <li>Management of problem gambling or sexual risk taking</li>
+                    <li>Pain management</li>
+                  </ul>
+                </Typography>
+              </div>
+
+              <div>
+                <Button className="tryBtn" href="/value/demo">
+                    TRY IT OUT →
+                </Button>
+              </div>
+
+              <Divider />
+              <Typography variant="body1">
+                Reference:
+              </Typography>
+              <Typography variant="body2" className='reference'>
+                [1] D. Potts, “The schwartz theory of basic values and some implications for political philosophy,” Policy of Truth, 18-Aug-2015. [Online]. Available: https://irfankhawajaphilosopher.com/2015/08/12/the-schwartz-theory-of-basic-values-and-some-implications-for-political-philosophy/. [Accessed: 06-Mar-2023]. 
+                <br/> [2] S. H. Schwartz, “Basic Human Values: An Overview.” [Online]. Available: https://www.uranos.ch/research/references/Schwartz_2006/Schwartzpaper.pdf. [Accessed: 06-Mar-2023]. 
+                <br/> [3] W. R. Miller and S. Rollnick, Motivational interviewing: Helping people change, Illustrated. New York, NY: Guilford Publications Inc., 2012. 
+                <br/> [4] Hall, K., Gibbie, T. and Lubman, D.I. (2012) Motivational interviewing techniques, Focus - Psychological strategies. McGill University. Available at: https://www.mcgill.ca/familymed/files/familymed/motivational_counseling.pdf (Accessed: March 6, 2023). 
+              </Typography>
+              <Footer />
             </Grid>
           </Grid>
         </Container>

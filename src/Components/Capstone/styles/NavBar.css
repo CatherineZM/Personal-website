@@ -1,17 +1,16 @@
 .navbar{
     width: 100%;
+    padding: 0;
 }
 
-.navContainer{
-    height: 4vw;
+.navContent{
+    height: 7vmin;
 }
 
 .logo{
-    float: left;
-    display: block;
-    color: #000000;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    height: 7vmin;
+}
+
+.navCompo a{
+    font-size: 2.5vmin;
 }

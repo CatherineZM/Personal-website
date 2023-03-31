@@ -5,7 +5,7 @@ import '../Capstone/styles/MainPage.css';
 import '../Capstone/styles/SideBar.css';
 
 import { Container, AppBar, Toolbar, Box, IconButton, Drawer, 
-  List, ListItemButton, ListItemText, ListItemIcon, Divider, ListItem, ListSubheader, ListItemAvatar, Avatar} 
+  List, ListItemButton, ListItemText, ListItemIcon, Divider, ListSubheader} 
   from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
@@ -24,8 +24,8 @@ const MenuItems = [
     icon: <HomeIcon />
   },
   {
-    Label: "List of Values",
-    link: "/value/list",
+    Label: "About Project",
+    link: "/value/project",
     icon: <ListAltIcon />
   },
   {
@@ -91,36 +91,6 @@ class Capstone extends React.Component {
                     <ListSubheader>University of Toronto - Capstone 2022</ListSubheader>
                     <ListSubheader>Team 2022518</ListSubheader>
                   </List>
-                  {/* <Divider />
-                  <List>
-                    <ListSubheader>Attribution:</ListSubheader>
-                    <ListSubheader>Team 2022518 Members:</ListSubheader>
-                    <ListItem>
-                      <ListItemAvatar><Avatar><PersonIcon /></Avatar></ListItemAvatar>
-                      <ListItemText primary="Boyuan Shao" secondary="UofT ECE2T2+PEY"/>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemAvatar><Avatar><PersonIcon /></Avatar></ListItemAvatar>
-                      <ListItemText primary="Mo Zhou" secondary="UofT ECE2T2+PEY"/>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemAvatar><Avatar><PersonIcon /></Avatar></ListItemAvatar>
-                      <ListItemText primary="Qiyan Liu" secondary="UofT ECE2T2+PEY"/>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemAvatar><Avatar><PersonIcon /></Avatar></ListItemAvatar>
-                      <ListItemText primary="Yonghai Yu" secondary="UofT ECE2T2+PEY"/>
-                    </ListItem>
-                    <ListSubheader>Special Thanks to:</ListSubheader>
-                    <ListItem>
-                      <ListItemAvatar><Avatar><PersonIcon /></Avatar></ListItemAvatar>
-                      <ListItemText primary="Prof. Jonathan Rose" secondary="Supervisor"/>
-                    </ListItem>
-                    <ListItem>
-                      <ListItemAvatar><Avatar><PersonIcon /></Avatar></ListItemAvatar>
-                      <ListItemText primary="Ms. Inci McGreal" secondary="Administrator"/>
-                    </ListItem>
-                  </List> */}
                 </Drawer>
               </Toolbar>
             </AppBar>

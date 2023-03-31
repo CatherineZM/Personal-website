@@ -1,0 +1,50 @@
+.footer{
+    margin-top: 0 !important;
+    padding-top: 4vmin;
+    padding-right: 0 !important;
+    padding-left: 16px !important;
+}
+
+.footer img{
+    margin-left: 0;
+    height: 6vmin;
+    width: fit-content;
+}
+
+.footer .MuiGrid-item{
+    padding-left: 0 !important;
+    height: fit-content;
+}
+
+.footer a{
+    color: black;
+}
+
+.footer .MuiTypography-body2{
+    font-size: 1.5vmin;
+    text-align: center;
+    display: inline;
+    margin-right: 8vmin;
+    margin-left: 8vmin;
+}
+
+@media screen and (max-width: 1200px) {
+    .footer img{
+        margin-left: 0;
+        width: 100%;
+        height: fit-content;
+    }
+    
+    .footer .MuiTypography-body2{
+        display: block;
+        text-align: right;
+        margin: 0;
+    }
+}
+
+.footer .MuiTypography-body1{
+    text-align: center;
+    font-size: 1.5vmin;
+    font-style: italic;
+    margin-top: 2vmin;
+}
