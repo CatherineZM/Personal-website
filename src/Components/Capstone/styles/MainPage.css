@@ -78,3 +78,8 @@
     text-shadow: 2px 2px grey;
     background-color: transparent;
 }
+
+.sidebarlogo{
+    width: 50%;
+    height: auto;
+}

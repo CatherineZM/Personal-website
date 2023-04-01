@@ -16,6 +16,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import InfoIcon from '@mui/icons-material/Info';
 
 import Banner from './Components/Banner.component';
+import logo from './Components/logo-transparent.png';
 
 const MenuItems = [
   {
@@ -91,6 +92,7 @@ class Capstone extends React.Component {
                     <ListSubheader>University of Toronto - Capstone 2022</ListSubheader>
                     <ListSubheader>Team 2022518</ListSubheader>
                   </List>
+                  <img src={logo} alt="logo" className='sidebarlogo'/>
                 </Drawer>
               </Toolbar>
             </AppBar>

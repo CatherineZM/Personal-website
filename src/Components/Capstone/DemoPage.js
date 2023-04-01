@@ -1,10 +1,12 @@
 import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../Capstone/styles/DemoPage.css';
 
 import { Container} from '@mui/material';
 
 import NavBar from './Components/NavBar';
+import Footer from './Components/Footer';
 
 class DemoPage extends React.Component {
   constructor(props){
@@ -18,6 +20,10 @@ class DemoPage extends React.Component {
     return (
         <Container maxWidth={false} disableGutters>
             <NavBar page="demo"/>
+            <Container maxWidth='lg' className="demoContent">
+
+              <Footer/>
+            </Container>
         </Container>
     )
   }

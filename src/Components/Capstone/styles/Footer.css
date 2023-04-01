@@ -5,13 +5,18 @@
     padding-left: 16px !important;
 }
 
+.footer .MuiGrid-container{
+    padding-top: 4vmin;
+}
+
 .footer img{
     margin-left: 0;
-    height: 6vmin;
-    width: fit-content;
+    height: 4vmax;
+    width: auto;
 }
 
 .footer .MuiGrid-item{
+    padding-top: 5px !important;
     padding-left: 0 !important;
     height: fit-content;
 }
@@ -29,15 +34,10 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .footer img{
-        margin-left: 0;
-        width: 100%;
-        height: fit-content;
-    }
-    
     .footer .MuiTypography-body2{
         display: block;
         text-align: right;
+        padding-right: 16px;
         margin: 0;
     }
 }
