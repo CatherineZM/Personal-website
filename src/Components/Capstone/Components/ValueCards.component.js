@@ -63,7 +63,7 @@ const valueExplanation = [
     {
       name: "Stimulation",
       category: "Openness to Change",
-      definition: "Excitement, novelty, and challenge in life",
+      definition: "Excitement, novelty, and challenge in life.",
       example: "My dream is to sky-dive once.",
       related: ["daring activities", "varied life", "exciting life"]
     },

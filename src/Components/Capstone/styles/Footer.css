@@ -45,6 +45,9 @@
 .footer .MuiTypography-body1{
     text-align: center;
     font-size: 1.5vmin;
-    font-style: italic;
     margin-top: 2vmin;
+}
+
+.footer .copyright{
+    font-style: italic;
 }

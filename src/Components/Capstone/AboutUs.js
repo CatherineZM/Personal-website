@@ -95,7 +95,7 @@ class AboutUs extends React.Component {
                 <Grid item xs={12}>
                   <h2>Special Thanks To:</h2>
                 </Grid>
-                {/* <Grid item xs={6} md={3} >
+                <Grid item xs={6} md={3} >
                   <Card>
                     <CardMedia
                       component="img"
@@ -118,7 +118,7 @@ class AboutUs extends React.Component {
                       <Button size="small"><a href="http://www.eecg.utoronto.ca/~jayar/">Website</a></Button>
                     </CardActions>
                   </Card>
-                </Grid> */}
+                </Grid>
                 <Grid item xs={6} md={3} >
                   <Card>
                     <CardMedia

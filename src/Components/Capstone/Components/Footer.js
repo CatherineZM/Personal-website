@@ -29,6 +29,15 @@ class Footer extends React.Component {
                     <Typography variant='body2'><a href="/value/about"> About Us </a></Typography>
                 </Grid>
                 <Grid xs={12}>
+                    <Typography variant='body1' className="disclaimer">
+                    Disclaimer: Value Detector is intended for the human value classification problem only. 
+                    Value Detector would not be used to collect any personal information. 
+                    In no way should the information provided by Value Detector be considered advice or recommendations.
+                    Value Detector and its developers shall not be held against any unlawful, offensive, threatening, libellous, 
+                    defamatory, obscene or otherwise objectionable content the user may enter.
+                    </Typography>
+                </Grid>
+                <Grid xs={12}>
                     <Typography variant='body1' className="copyright">
                         &copy; Copyright 2023, Capstone Team 2022518 at the University of Toronto. 
                         <br/>
