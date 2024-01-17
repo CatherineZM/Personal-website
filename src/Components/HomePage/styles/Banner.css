@@ -1,66 +1,51 @@
-.banner{
-    padding-right: 0;
-    padding-left: 0;
-    position: relative;
+.bannerInfo{
+    color: #11386e;
+    padding-left: 2vmin;
     text-align: center;
+    font-family: 'Comfortaa', cursive;
 }
 
-#bannerImage{
-    width: 100%;
-    background-color:white;
-    opacity: 0.6;
-}
-
-.bannerText{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-}
-
-.bannerText h1{
-    font-size: 3vw;
+.bannerInfo h1{
     margin-bottom: 1vw;
 }
 
-.bannerText h2{
-    font-size: 2vw;
+.bannerInfo h2{
     margin-bottom: 2vw;
 }
 
-.bannerText .contactBtn{
+.bannerInfo strong{
+    color: #E94E77;
+}
+
+.banner .expBtn{
     border-color: #11386e;
     background-color: #11386e;
     opacity: 0.8;
     color: white;
-    font-size: 1.8vw;
     width: 100%;
+    font-family: 'Comfortaa', cursive;
+    font-size: medium;
 }
 
-.bannerText .contactBtn:hover{
+.banner .expBtn:hover{
     border-color: white;
     background-color: white;
     opacity: 0.8;
     color: #11386e;
-    font-size: 1.8vw;
     width: 100%;
 }
 
-.bannerText .socialBtn{
+.banner .socialBtn{
     border-color: transparent;
     background-color: transparent;
     color: #11386e;
-    font-size: 1.8vw;
     width: 100%;
 }
 
-.bannerText .socialBtn:hover{
+.banner .socialBtn:hover{
     border-color: white;
     background-color: white;
     opacity: 0.9;
     color: #11386e;
-    font-size: 1.8vw;
     width: 100%;
 }

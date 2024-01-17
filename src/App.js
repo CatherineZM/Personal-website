@@ -2,12 +2,12 @@ import './App.css';
 import React from "react";
 import {Routes, Route} from "react-router-dom";
 
-import HomePage from "./HomePage";
+import HomePage from "./Components/HomePage";
 import Resume from "./Components/Resume";
-import Capstone from "./Components/Capstone/MainPage";
-import ValuePage from "./Components/Capstone/ValuePage";
-import DemoPage from "./Components/Capstone/DemoPage";
-import AboutUs from "./Components/Capstone/AboutUs";
+import Capstone from "./Capstone/MainPage";
+import ValuePage from "./Capstone/ValuePage";
+import DemoPage from "./Capstone/DemoPage";
+import AboutUs from "./Capstone/AboutUs";
 
 class App extends React.Component {
   render() {

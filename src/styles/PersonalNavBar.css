@@ -1,0 +1,41 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navContainer{
+    top: 0;
+    height: 6vmin;
+}
+
+.personal-logo{
+    float: left;
+}
+
+.personal-logo img{
+    height: 5vmin;
+}
+
+#navLink .navLinkContent{
+    color: rgb(142, 142, 147);
+    font-family: 'Comfortaa', cursive;
+}
+
+#navLink .navLinkContent:hover{
+    color: black;
+}
+
+#navLink .navLinkContent.active{
+    color: black;
+}
+
+.nav-transparent{
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.nav-white{
+    background-color: rgb(229, 229, 234);
+}

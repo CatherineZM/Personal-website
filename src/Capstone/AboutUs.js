@@ -1,7 +1,7 @@
 import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../Capstone/styles/AboutUs.css';
+import './styles/AboutUs.css';
 
 import { Container, Grid, Card, CardMedia, CardContent, Typography, 
          CardActions, Button } from '@mui/material';
