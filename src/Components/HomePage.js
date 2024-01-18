@@ -6,24 +6,8 @@ import './../styles/HomePage.css';
 
 import NavBar from './NavBar';
 import Banner from './HomePage/Banner.component';
+import InfoCard from './HomePage/InfoCard';
 
-const InfoCard = ({ type, title, organization, description, link }) => {
-  return (
-    <Paper className="proj-cards">
-      <Card variant="outlined">
-        <CardContent>
-          <Typography variant="h6" color="text.secondary" gutterBottom>{type}</Typography>
-          <Typography variant="h5">{title}</Typography>
-          <Typography color="text.secondary">{organization}</Typography>
-          <Typography variant="body2">{description}</Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small" href={link}>Learn More</Button>
-        </CardActions>
-      </Card>
-    </Paper>
-  );
-};
 
 class HomePage extends React.Component {
 
@@ -37,7 +21,7 @@ class HomePage extends React.Component {
             <InfoCard type="Education" 
                       title="Computer Engineering"
                       organization="University of Toronto"
-                      description="Bachelor of Applied Science\n Minor in Engineering Business \n Certificate in Artificial Intelligence"
+                      description="Bachelor of Applied Science \nMinor in Engineering Business \nCertificate in Artificial Intelligence \n something new \n smothing new \n smoething new"
                       link="https://www.ece.utoronto.ca"
                       />
           </Grid>
