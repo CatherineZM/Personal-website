@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Paper, Card, CardContent, Typography, CardActions, Button } from '@mui/material';
 
-const InfoCard = ({ type, title, organization, description, link }) => {
+const InfoCard = ({ type, title, organization, date, description, link }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const fullDescription = description.replace(/\\n/g, '\n');
   const descriptionLines = fullDescription.split('\n');
@@ -28,19 +28,20 @@ const InfoCard = ({ type, title, organization, description, link }) => {
   };
 
   return (
-    <Paper className="proj-cards" elevation={0}>
-      <Card variant="outlined" style={{ border: "none", boxShadow: "none" }}>
+    <div className="proj-cards" elevation={0}>
+      <Card variant="outlined" style={{ backgroundColor:'transparent', border: "none", boxShadow: "none" }}>
         <CardContent>
           <Typography variant="h6" color="text.secondary" gutterBottom>{type}</Typography>
           <Typography variant="h5">{title}</Typography>
           <Typography color="text.secondary">{organization}</Typography>
+          <Typography color="text.secondary">{date}</Typography>
           <div>{renderDescription()}</div>
         </CardContent>
         <CardActions>
           <Button size="small" href={link}>Learn More</Button>
         </CardActions>
       </Card>
-    </Paper>
+    </div>
   );
 };
 

@@ -1,0 +1,20 @@
+{
+    "education": {
+        "title": "BAS in Computer Engineering",
+        "organization": "University of Toronto",
+        "date": "Sep 2017 - Jun 2023",
+        "description": "Minor in Engineering Business \n Certificate in Artificial Intelligence"
+    },
+    "workExperience": {
+        "title": "Software Developer (Paid Internship)",
+        "organization": "IBM Canada Ltd.",
+        "date": "May 2021 - Aug 2022",
+        "description": "16-months internship in DB2 domain Availability."
+    },
+    "languages":{
+        "name": ["Python", "Java", "JavaScript", "HTML", "CSS",
+                "Perl", "C/C++", "SQL", "Assembly", "Git", "Bash"],
+        "proficiency": [80, 60, 80, 75, 80,
+                        70, 40, 60, 50, 70, 40]
+    }
+}

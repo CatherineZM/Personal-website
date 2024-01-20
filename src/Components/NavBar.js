@@ -42,7 +42,7 @@ class NavBar extends React.Component {
             </Navbar.Brand>
             <Nav className="justify-content-end" id="navLink" activeKey={this.props.page}>
                 <Nav.Link className="navLinkContent" href="/" eventKey="home">Home</Nav.Link>
-                <Nav.Link className="navLinkContent" href="/resume" eventKey="resume">Resume</Nav.Link>
+                <Nav.Link className="navLinkContent" href="/experience" eventKey="experience">Experience</Nav.Link>
                 <Nav.Link className="navLinkContent" href="/contact" eventKey="contact">Contact Me</Nav.Link>
             </Nav>
           </Container>
