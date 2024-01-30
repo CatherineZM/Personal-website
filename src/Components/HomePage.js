@@ -32,7 +32,7 @@ class HomePage extends React.Component {
           <Typography variant='h4' component="h2">
             Highlight of Qualifications
           </Typography>
-          <Grid container spacing={2} className="skillChart">
+          <Grid container className="skillChart">
             <Grid item xs={12} md={7}>
               <Typography variant='h5' component="h3">
                 Programming Languages
@@ -44,13 +44,13 @@ class HomePage extends React.Component {
             </Grid>
             <Grid item xs={12} md={5}>
               <Typography variant='h5' component="h3">
-                Softwares/IDEs
+                Softwares & IDEs
               </Typography>
               <IDEChart/>
             </Grid>
           </Grid>
       
-          <Typography variant='h4' component="h2">
+          <Typography variant='h4' component="h2" className="sectionName">
             Education & Work Experience
           </Typography>
           <Grid container spacing={2} className="home-content">
