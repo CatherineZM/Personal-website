@@ -1,16 +1,18 @@
 import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Grid, List, Typography, ListItem } from '@mui/material';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../styles/HomePage.css';
 
 import contentData from './data.json';
+import portrait from '../img/photo.jpg';
 
 import NavBar from './NavBar';
 import Banner from './HomePage/Banner.component';
 import InfoCard from './HomePage/InfoCard';
 import SkillChart from './HomePage/SkillChart';
 import IDEChart from './HomePage/IDEChart';
+import { Button } from 'react-bootstrap';
 
 class HomePage extends React.Component {
   constructor(props){
@@ -28,13 +30,38 @@ class HomePage extends React.Component {
       <div>
         <NavBar page="home" isHomePage={true}/>
         <Banner />
-        <div className="firstSection">
-          <Typography variant='h4' component="h2">
+        <div className="aboutMe">
+          <Grid container spacing={2} className="biography">
+            <Grid item xs={0} md={1} />
+            <Grid item xs={12} md={3}>
+              <img className="profilePic" src={portrait} alt="Catherine Zhou Pic" />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Typography variant='h4' component="h2">
+                About Me
+              </Typography>
+              <Typography className="quote">
+                I recently completed my Bachelor's degree from the University of Toronto in Electrical and Computer Engineering 
+                with a minor in Engineering Business and a certification in Artificial Intelligence. 
+                And I had a 16-months experience as a Software Developer at IBM Canada. 
+                I have a strong passion for programming and software development, especially in web applications. 
+                I have acquired multiple skills in various data structures, testing methodologies, and algorithms, 
+                as well as in various programming languages such as Python, JavaScript, C/C++, Perl, Java, SQL, HTML, and more.
+              </Typography>
+              <List>
+                <ListItem>Email: </ListItem>
+                <ListItem>Location: </ListItem>
+                <ListItem>Name: </ListItem>
+              </List>
+              <Button>Hi</Button>
+            </Grid>
+          </Grid>
+          <Typography className="sectionTitle" variant='h4' component="h2">
             Highlight of Qualifications
           </Typography>
           <Grid container className="skillChart">
             <Grid item xs={12} md={7}>
-              <Typography variant='h5' component="h3">
+              <Typography variant='h5' component="h3" className="skillSubtitle">
                 Programming Languages
               </Typography>
               <SkillChart title="Proficiency"
@@ -43,14 +70,14 @@ class HomePage extends React.Component {
               />
             </Grid>
             <Grid item xs={12} md={5}>
-              <Typography variant='h5' component="h3">
+              <Typography variant='h5' component="h3" className="skillSubtitle">
                 Softwares & IDEs
               </Typography>
               <IDEChart/>
             </Grid>
           </Grid>
       
-          <Typography variant='h4' component="h2" className="sectionName">
+          <Typography variant='h4' component="h2" className="sectionTitle">
             Education & Work Experience
           </Typography>
           <Grid container spacing={2} className="home-content">

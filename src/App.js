@@ -15,12 +15,10 @@ import DemoPage from "./Capstone/DemoPage";
 import AboutUs from "./Capstone/AboutUs";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: 'Comfortaa !important',
+  },
   components: {
-    typography: {
-      allVariants: {
-        fontFamily: 'Comfortaa'
-      }
-    },
     MuiPaper: {
       styleOverrides: {
         root: {
