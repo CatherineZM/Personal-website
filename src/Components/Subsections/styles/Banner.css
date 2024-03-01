@@ -17,24 +17,6 @@
     color: #E94E77;
 }
 
-.banner .expBtn{
-    border-color: #11386e;
-    background-color: #11386e;
-    opacity: 0.8;
-    color: white;
-    width: 100%;
-    font-family: 'Comfortaa', cursive;
-    font-size: medium;
-}
-
-.banner .expBtn:hover{
-    border-color: white;
-    background-color: white;
-    opacity: 0.8;
-    color: #11386e;
-    width: 100%;
-}
-
 .banner .socialBtn{
     border-color: transparent;
     background-color: transparent;

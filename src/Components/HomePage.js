@@ -2,16 +2,16 @@ import React from 'react';
 import { Grid, List, Typography, ListItem } from '@mui/material';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './../styles/HomePage.css';
+import './HomePage.css';
 
 import contentData from './data.json';
 import portrait from '../img/photo.jpg';
 
-import NavBar from './NavBar';
-import Banner from './HomePage/Banner.component';
-import InfoCard from './HomePage/InfoCard';
-import SkillChart from './HomePage/SkillChart';
-import IDEChart from './HomePage/IDEChart';
+import NavBar from './Subsections/NavBar';
+import Banner from './Subsections/Banner.component';
+import InfoCard from './Elements/InfoCard';
+import SkillChart from './Elements/SkillChart';
+import IDEChart from './Elements/IDEChart';
 import { Button } from 'react-bootstrap';
 
 class HomePage extends React.Component {
@@ -29,9 +29,9 @@ class HomePage extends React.Component {
     return (
       <div>
         <NavBar page="home" isHomePage={true}/>
-        <Banner />
+        <Banner/>
         <div className="aboutMe">
-          <Grid container spacing={2} className="biography">
+          <Grid container spacing={2} className="biography" id="biography">
             <Grid item xs={0} md={1} />
             <Grid item xs={12} md={3}>
               <img className="profilePic" src={portrait} alt="Catherine Zhou Pic" />
@@ -50,16 +50,16 @@ class HomePage extends React.Component {
               </Typography>
               <List>
                 <ListItem>Email: </ListItem>
-                <ListItem>Location: </ListItem>
+                <ListItem>Location: Toronto</ListItem>  
                 <ListItem>Name: </ListItem>
               </List>
               <Button>Hi</Button>
             </Grid>
           </Grid>
-          <Typography className="sectionTitle" variant='h4' component="h2">
+          <Typography className="sectionTitle qualification" variant='h4' component="h2">
             Highlight of Qualifications
           </Typography>
-          <Grid container className="skillChart">
+          <Grid container className="skillChart qualification">
             <Grid item xs={12} md={7}>
               <Typography variant='h5' component="h3" className="skillSubtitle">
                 Programming Languages
@@ -77,7 +77,7 @@ class HomePage extends React.Component {
             </Grid>
           </Grid>
       
-          <Typography variant='h4' component="h2" className="sectionTitle">
+          <Typography variant='h4' component="h2" className="sectionTitle experience">
             Education & Work Experience
           </Typography>
           <Grid container spacing={2} className="home-content">
