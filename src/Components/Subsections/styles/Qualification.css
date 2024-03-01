@@ -1,0 +1,14 @@
+.qualification .sectionTitle{
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+.skillChart h3{
+    text-align: center;
+    font-weight: bold;
+}
+
+.skillSubtitle{
+    padding-top: 2vh;
+}

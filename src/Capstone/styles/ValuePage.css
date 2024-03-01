@@ -62,6 +62,10 @@
     color: black;
 }
 
+.ValueList .secondaryTab{
+    text-decoration-line: none;
+}
+
 .secondaryTab .MuiListItemButton-root{
     background-color: #F2F2F2;
     color: grey;
@@ -73,6 +77,7 @@
 
 .ValueList .primaryTab{
     color: grey;
+    text-decoration-line: none;
 }
 
 .ValueList .primaryTab:hover{

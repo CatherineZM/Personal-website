@@ -2,35 +2,3 @@
     background-color: #F7F9FD;
     padding: 5vh;
 }
-
-.aboutMe .sectionTitle{
-    font-weight: bold;
-    text-align: center;
-    padding-top: 5vh;
-}
-
-.aboutMe .profilePic{
-    width: 100%;
-}
-
-.biography .quote{
-    text-align: left;
-}
-
-.skillChart h3{
-    text-align: center;
-    font-weight: bold;
-}
-
-.skillSubtitle{
-    padding-top: 2vh;
-}
-
-.home-content{
-    padding: 20;
-}
-
-.proj-cards{
-    padding: 20;
-    text-align: 'center';
-}

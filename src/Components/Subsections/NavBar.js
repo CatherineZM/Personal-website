@@ -42,20 +42,20 @@ class NavBar extends React.Component {
               <img className="d-inline-block align-top" src={MoZhou} alt="Mo Zhou"/>
             </Navbar.Brand>
             <Nav className="justify-content-end" id="navLink">
-              <Link to="selfIntro" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <Nav.Link className="navLinkContent" eventKey="home">Home</Nav.Link>
+              <Link className="navLinkTab" to="selfIntro" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                <span className="navLinkContent">Home</span>
               </Link>
-              <Link to="biography" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <Nav.Link className="navLinkContent" eventKey="biography">About Me</Nav.Link>
+              <Link className="navLinkTab" to="biography" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                <span className="navLinkContent">About Me</span>
               </Link>
-              <Link to="qualification" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <Nav.Link className="navLinkContent" eventKey="qualification">Qualifications</Nav.Link>
+              <Link className="navLinkTab" to="qualification" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                <span className="navLinkContent">Qualifications</span>
               </Link>
-              <Link to="experience" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <Nav.Link className="navLinkContent" eventKey="experience">Experience</Nav.Link>
+              <Link className="navLinkTab" to="experience" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                <span className="navLinkContent">Experience</span>
               </Link>
-              <Link to="contactMe" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <Nav.Link className="navLinkContent" eventKey="contactMe">Contact Me</Nav.Link>
+              <Link className="navLinkTab" to="contactMe" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                <span className="navLinkContent">Contact Me</span>
               </Link>
             </Nav>
           </Container>

@@ -2,6 +2,7 @@
     position: fixed;
     top: 0;
     width: 100%;
+    z-index:10;
 }
 
 .navContainer{
@@ -18,15 +19,22 @@
 }
 
 #navLink .navLinkContent{
-    color: rgb(142, 142, 147);
     font-family: 'Comfortaa', cursive;
 }
 
-#navLink .navLinkContent:hover{
-    color: black;
+#navLink .navLinkTab{
+    padding-right: 3vmin;
 }
 
-#navLink .navLinkContent.active{
+#navLink a{
+    color: gray;
+    text-decoration-line: none;
+}
+
+#navLink .navLinkTab:hover{
+    color: black;
+}
+#navLink a.active{
     color: black;
 }
 
