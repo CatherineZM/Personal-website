@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, List, Typography, ListItem } from '@mui/material';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './HomePage.css';

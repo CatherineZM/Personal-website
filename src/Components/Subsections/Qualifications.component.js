@@ -19,22 +19,21 @@ class Qualifications extends React.Component {
 
     render() {
         return(
-            <Grid container className="skillChart qualification">
+            <Grid container spacing={2} className="skillChart qualification" direction="row" justifyContent="center" alignItems="flex-start">
                 <Grid item xs={12}>
                     <Typography className="sectionTitle" variant='h4' component="h2">
                         Highlight of Qualifications
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={7}>
+                <Grid item xs={12} md={6}>
                     <Typography variant='h5' component="h3" className="skillSubtitle">
                         Programming Languages
                     </Typography>
                     <SkillChart title="Proficiency"
                         list={this.state.languages} 
-                        listData={this.state.langData}
-                    />
+                        listData={this.state.langData}/>
                 </Grid>
-                <Grid item xs={12} md={5}>
+                <Grid item xs={12} md={3}>
                     <Typography variant='h5' component="h3" className="skillSubtitle">
                         Softwares & IDEs
                     </Typography>
