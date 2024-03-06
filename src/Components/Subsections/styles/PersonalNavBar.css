@@ -32,10 +32,12 @@
 }
 
 #navLink .navLinkTab:hover{
-    color: black;
+    color: #11386e;
+    font-weight: bold;
 }
 #navLink a.active{
-    color: black;
+    color: #11386e;
+    font-weight: bold;
 }
 
 .nav-transparent{
@@ -45,5 +47,5 @@
 }
 
 .nav-white{
-    background-color: rgb(229, 229, 234);
+    background-color: white;
 }

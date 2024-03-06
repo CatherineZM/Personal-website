@@ -1,7 +1,39 @@
+.biography .sectionTitle{
+    font-weight: bold;
+    text-align: center;
+}
+
 .profilePic{
     width: 100%;
 }
 
+.biography .bioQuote{
+    border-color: #11386e;
+    color: #11386e;
+}
+
+.biography #quoteAuthor{
+    width: 100%;
+    text-align: right;
+    margin-bottom: 0;
+}
+
 .biography .bioParagraph{
     text-align: left;
+    margin-top: 2vh;
+}
+
+.biography .bioBtn{
+    width: 100%;
+    border-color: #11386e;
+    background-color: #11386e;
+    color: white;
+    font-weight: bold;
+}
+
+.biography .bioBtn:hover{
+    width: 100%;
+    background-color: white;
+    color: #11386e;
+    font-weight: bold;
 }

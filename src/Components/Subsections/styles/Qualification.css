@@ -12,3 +12,17 @@
 .skillSubtitle{
     padding-top: 2vh;
 }
+
+.skillList{
+    margin-left: 1vh;
+}
+
+.skillListItem{
+    margin-bottom: 1vh;
+    margin-right: 1vh;
+}
+
+.skillListItem span{
+    color: #11386e;
+    font-size: 0.8125rem;
+}

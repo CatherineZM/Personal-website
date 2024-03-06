@@ -11,10 +11,34 @@
         "date": "May 2021 - Aug 2022",
         "description": "16-months internship in DB2 domain Availability."
     },
-    "languages":{
-        "name": ["Python", "Java", "JavaScript", "HTML", "CSS",
-                "Perl", "C/C++", "SQL", "Assembly", "Git", "Bash"],
-        "proficiency": [80, 60, 80, 75, 80,
-                        70, 40, 60, 50, 70, 40]
-    }
+    "languages":[
+        {"id": 1, "name": "Python","proficiency": 80},
+        {"id": 2, "name": "TypeScript","proficiency": 60},
+        {"id": 3, "name": "JavaScript","proficiency": 80},
+        {"id": 4, "name": "HTML","proficiency": 75},
+        {"id": 5, "name": "CSS","proficiency": 80},
+        {"id": 6, "name": "Java","proficiency": 50},
+        {"id": 7, "name": "Perl","proficiency": 70},
+        {"id": 8, "name": "C/C++","proficiency": 40},
+        {"id": 9, "name": "SQL","proficiency": 60},
+        {"id": 10, "name": "Assembly","proficiency": 50},
+        {"id": 11, "name": "Git","proficiency": 70},
+        {"id": 12, "name": "Bash","proficiency": 40}
+    ],
+    "software":[
+        {"id": 1, "name": "ReactJS", "color": "rgba(255, 99, 132, 0.4)"},
+        {"id": 2, "name": "NextJS", "color": "rgba(255, 159, 64, 0.4)"},
+        {"id": 3, "name": "TailwindCSS", "color": "rgba(255, 205, 86, 0.4)"},
+        {"id": 4, "name": "NodeJS", "color": "rgba(75, 192, 192, 0.4)"},
+        {"id": 5, "name": "MySQL", "color": "rgba(54, 162, 235, 0.4)"},
+        {"id": 6, "name": "MongoDB", "color": "rgba(153, 102, 255, 0.4)"},
+        {"id": 7, "name": "Agile", "color": "rgba(201, 203, 207, 0.4)"},
+        {"id": 8, "name": "Linux", "color": "rgba(255, 99, 132, 0.4)"},
+        {"id": 9, "name": "Visual Studio", "color": "rgba(255, 159, 64, 0.4)"}
+    ],
+    "interpersonal": [
+        {"id": 1, "name": "Time Management", "color": "rgba(255, 99, 132, 0.4)"},
+        {"id": 1, "name": "Project Management", "color": "rgba(255, 159, 64, 0.4)"},
+        {"id": 1, "name": "Communication", "color": "rgba(255, 205, 86, 0.4)"}
+    ]
 }
