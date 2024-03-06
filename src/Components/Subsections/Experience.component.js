@@ -1,47 +1,83 @@
 import React from 'react';
 
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import { Grid, Typography, Button, Chip} from '@mui/material';
+import SchoolIcon from '@mui/icons-material/School';
+import LaptopIcon from '@mui/icons-material/Laptop';
+import TerminalIcon from '@mui/icons-material/Terminal';
+
+import 'react-vertical-timeline-component/style.min.css';
 import './styles/Experience.css';
 
-import { Grid, Typography} from '@mui/material';
-
 import contentData from '../data.json';
-import InfoCard from '../Elements/InfoCard';
 
 class Experience extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            education: contentData.education,
-            workExperience: contentData.workExperience,
         };
     }
 
     render() {
+        const education = contentData.education;
+        const workExperience = contentData.workExperience;
         return(
-            <Grid container spacing={2} className="experience">
+            <Grid container spacing={2} className="experience" direction="row" justifyContent="center" alignItems="flex-start">
                 <Grid item xs={12}>
                     <Typography variant='h4' component="h2" className="sectionTitle">
-                        Education & Work Experience
+                        Experience
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                    <InfoCard type="Education" 
-                                title={this.state.education.title}
-                                organization={this.state.education.organization}
-                                date={this.state.education.date}
-                                description={this.state.education.description}
-                                link="https://www.ece.utoronto.ca"
-                                />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <InfoCard type="Work Experience"
-                                title={this.state.workExperience.title}
-                                organization={this.state.workExperience.organization}
-                                date={this.state.workExperience.date}
-                                description={this.state.workExperience.description}
-                                link="https://www.ibm.com/products/db2"
-                                />
-                </Grid>
+                <VerticalTimeline lineColor='#11386e'>
+                    <VerticalTimelineElement className="vertical-timeline-element--education"
+                                             contentStyle={{ background: '#CBE0F4', color: '#11386e' }}
+                                             contentArrowStyle={{ borderRight: '7px solid  #CBE0F4' }}
+                                             date={education.date}
+                                             iconStyle={{ background: '#CBE0F4', color: '#11386e' }}
+                                             icon={<SchoolIcon/>}>
+                        <h5 className="expType">Education</h5>
+                        <h3 className="vertical-timeline-element-title">{education.title}</h3>
+                        <h4 className="vertical-timeline-element-subtitle">{education.organization}</h4>
+                        <p>{education.description}</p>
+                        <Button className="expBtnDark" variant="outlined" href={education.url}>About Institution</Button>
+                    </VerticalTimelineElement>
+
+                    <VerticalTimelineElement className="vertical-timeline-element--work"
+                                             contentStyle={{ background: '#F1CCE1', color: '#11386e' }}
+                                             contentArrowStyle={{ borderRight: '7px solid  #F1CCE1' }}
+                                             date={workExperience[0].date}
+                                             iconStyle={{ background: '#F1CCE1', color: '#11386e' }}
+                                             icon={<LaptopIcon />}>
+                        <h5 className="expType">Work - {workExperience[0].type}</h5>
+                        <h3 className="vertical-timeline-element-title">{workExperience[0].title}</h3>
+                        <h4 className="vertical-timeline-element-subtitle">{workExperience[0].organization}</h4>
+                        <p>{workExperience[0].description}</p>
+                        <div className="expSkillList">
+                            {workExperience[0].skillList.map((skill) => 
+                                <Chip className="expSkillListItem" key={skill} label={skill} />
+                            )}
+                        </div>
+                        <Button className="expBtnDark" variant="outlined" href={workExperience[0].url}>About Organization</Button>
+                    </VerticalTimelineElement>
+
+                    <VerticalTimelineElement className="vertical-timeline-element--work"
+                                             contentStyle={{ background: '#5D7AB5', color: '#fff' }}
+                                             contentArrowStyle={{ borderRight: '7px solid  #5D7AB5' }}
+                                             date={workExperience[1].date}
+                                             iconStyle={{ background: '#5D7AB5', color: '#fff' }}
+                                             icon={<TerminalIcon />}>
+                        <h5 className="expType">Work - {workExperience[1].type}</h5>
+                        <h3 className="vertical-timeline-element-title">{workExperience[1].title}</h3>
+                        <h4 className="vertical-timeline-element-subtitle">{workExperience[1].organization}</h4>
+                        <p>{workExperience[1].description}</p>
+                        <div className="expSkillList">
+                            {workExperience[1].skillList.map((skill) => 
+                                <Chip className="expSkillListItem" key={skill} label={skill} />
+                            )}
+                        </div>
+                        <Button className="expBtnLight" variant="outlined" href={workExperience[1].url}>About Organization</Button>
+                    </VerticalTimelineElement>
+                </VerticalTimeline>
           </Grid>
         )
     }

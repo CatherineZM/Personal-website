@@ -3,8 +3,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './HomePage.css';
 
-import contentData from './data.json';
-
 import NavBar from './Subsections/NavBar';
 import Banner from './Subsections/Banner.component';
 import Biography from './Subsections/Biography.component';
@@ -21,13 +19,15 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <NavBar page="home" isHomePage={true}/>
+        <NavBar isHomePage={true}/>
         <div className="section"><Banner/></div>
         <div className="aboutMe section">
           <Biography />
           <Qualifications />
         </div>
-        <div className="exp section"><Experience /></div>
+        <div className="exp section">
+          <Experience />
+        </div>
       </div>
     )
   }

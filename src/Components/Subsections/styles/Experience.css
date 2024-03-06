@@ -1,10 +1,48 @@
 .experience .sectionTitle{
     font-weight: bold;
     text-align: center;
-    padding-top: 5vh;
 }
 
+.experience .expSubtitle{
+    width: 100%;
+    text-align: right;
+}
 .proj-cards{
     padding: 20;
     text-align: 'center';
+}
+
+.vertical-timeline-element-date{
+    color: #11386e
+}
+
+.experience{
+    white-space: pre-line;  
+    vertical-align: bottom;
+}
+
+.expSkillList{
+    margin-top: 1vh;
+}
+
+.expSkillListItem{
+    margin-bottom: 1vh;
+    margin-right: 1vh;
+}
+
+.expSkillListItem span{
+    color: #fff;
+    font-size: 0.8125rem;
+}
+
+.experience .expBtnDark{
+    margin-top: 1rem;
+    border-color: #11386e;
+    color: #11386e;
+}
+
+.experience .expBtnLight{
+    margin-top: 1rem;
+    border-color: #fff;
+    color: #fff;
 }
