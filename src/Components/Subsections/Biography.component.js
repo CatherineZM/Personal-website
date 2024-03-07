@@ -18,8 +18,7 @@ class Biography extends React.Component {
                 <Grid item xs={12} md={6}>
                     <Alert className="bioQuote" icon={false} variant="outlined" severity="info">
                         <Typography variant="body1" gutterBottom>
-                            "Not till we are lost, in other words, not till we have lost the world, do we begin to find ourselves." 
-                            <p id="quoteAuthor">-- Henry D.Thoreau</p>
+                            "Not till we are lost, in other words, not till we have lost the world, do we begin to find ourselves."  -- Henry D.Thoreau
                         </Typography>
                     </Alert>
                     <Typography className="bioParagraph" variant="body1" gutterBottom>
@@ -36,14 +35,19 @@ class Biography extends React.Component {
                         Combining with my passion in helping others, I started working with NGOs on their technical projects by joining the Volunteer Engineering Experience Program.
                         Now I'm a passionate Full Stack Developer who hope to utilize my technical knowledge to improve people's life.
                     </Typography>
-                    <Grid container={'true'} item xs={12} spacing={1}> 
-                        <Grid item={'true'} xs={6} >
+                    <Grid container={true} item xs={12} spacing={1}> 
+                        <Grid item={true} xs={6} >
                             <Button className="bioBtn" variant="outlined" download="Mo_Zhou_Resume" href={resume}>
-                                Download My Resume
+                                Download Resume
                             </Button>
                         </Grid>
-                        <Grid item={'true'} xs={6} >
-                            <Button className="bioBtn" variant="outlined">Contact Me</Button>
+                        <Grid item={true} xs={6} >
+                            <Button className="bioBtn" variant="outlined" 
+                                    onClick={(e) => {e.preventDefault();
+                                                    window.scrollTo({top: document.querySelector("#contactMe").offsetTop,
+                                                    behavior: "smooth"});}}>
+                                Contact Me
+                            </Button>
                         </Grid>
                     </Grid>
                 </Grid>

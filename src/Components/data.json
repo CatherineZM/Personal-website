@@ -26,8 +26,8 @@
     ],
     "interpersonal": [
         {"id": 1, "name": "Time Management", "color": "rgba(255, 99, 132, 0.4)"},
-        {"id": 1, "name": "Project Management", "color": "rgba(255, 159, 64, 0.4)"},
-        {"id": 1, "name": "Communication", "color": "rgba(255, 205, 86, 0.4)"}
+        {"id": 2, "name": "Project Management", "color": "rgba(255, 159, 64, 0.4)"},
+        {"id": 3, "name": "Communication", "color": "rgba(255, 205, 86, 0.4)"}
     ],
     "education": {
         "title": "Bachelor of Applied Science",
@@ -55,8 +55,50 @@
             "skillList": ["Perl", "SQL", "C", "Bash", "Git", "Linux", "AIX"]
         }
     ],
-    "workPalette":[
-        {"id": 1, "primaryColor": "#F1CCE1", "secondaryColor": "#11386e"},
-        {"id": 2, "primaryColor": "#5D7AB5", "secondaryColor": "#fff"}
+    "projectExperience": [
+        {
+            "id": 1,
+            "name": "Human Value Detection in Text", 
+            "highlight": true,
+            "title": "Team Leader",
+            "organization": "University of Toronto",
+            "date": "May 2022 - Apr 2023",
+            "description": "A machine learning model that detects human value based on The Schwartz Theory of Basic Values. \n The model achieved 93% accuracy with an F1-score of 0.93. \n The model has a GPT2 transformer and CNN classification head.",
+            "demo_url": "https://mozhou.ca/value",
+            "code_url": "https://github.com/CatherineZM/Personal-website/tree/master/src/Capstone",
+            "skillList": ["natural language processing", "Python", "JavaScript", "React"]
+        },{
+            "id": 2,
+            "name": "VEEP Website Upgrade", 
+            "highlight": true,
+            "title": "Supervisor",
+            "organization": "VEEP",
+            "date": "Oct 2021 - Apr 2022",
+            "description": "Developed website for organization",
+            "demo_url": "https://veep.skule.ca",
+            "code_url": "https://github.com/UofT-VEEP/VEEP-Website",
+            "skillList": ["JavaScript", "React"]
+        },{
+            "id": 3,
+            "name": "Mobile Learning Platform", 
+            "highlight": true,
+            "title": "Project Manager",
+            "organization": "Spelling Bee of Canada",
+            "date": "Jan - May 2021",
+            "description": "Upgrade mobile learning platform",
+            "org_url": "https://www.spellingbeeofcanada.ca/",
+            "skillList": ["ASP.NET", "CSS"]
+        },{
+            "id": 4,
+            "name": "Cook Pad", 
+            "highlight": false,
+            "title": "Team Member",
+            "organization": "Programming on the Web, University of Toronto",
+            "date": "Sep - Dec 2020",
+            "description": "Recipe Sharing website",
+            "code_url": "https://github.com/CatherineZM/CookPad",
+            "skillList": ["React", "CSS"]
+        }
     ]
+    
 }

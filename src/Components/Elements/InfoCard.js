@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { Paper, Card, CardContent, Typography, CardActions, Button } from '@mui/material';
+import { Card, CardContent, Typography, CardActions, Button } from '@mui/material';
 
-const InfoCard = ({ type, title, organization, date, description, link }) => {
+const InfoCard = ({ project }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const fullDescription = description.replace(/\\n/g, '\n');
+  const fullDescription = project.description.replace(/\\n/g, '\n');
   const descriptionLines = fullDescription.split('\n');
-  const isOverWordLimit = fullDescription.split(/\s+/).length > 100;
-  const shouldShowExpandButton = !isExpanded && (descriptionLines.length > 4 || isOverWordLimit);
+  const isOverWordLimit = fullDescription.split(/\s+/).length > 25;
+  const shouldShowExpandButton = !isExpanded && (descriptionLines.length > 2 || isOverWordLimit);
 
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
 
   const renderDescription = () => {
-    const contentToShow = isExpanded ? descriptionLines : descriptionLines.slice(0, 4);
+    const contentToShow = isExpanded ? descriptionLines : descriptionLines.slice(0, 2);
     return (
       <>
         {contentToShow.map((line, index) => (
@@ -31,14 +31,16 @@ const InfoCard = ({ type, title, organization, date, description, link }) => {
     <div className="proj-cards" elevation={0}>
       <Card variant="outlined" style={{ backgroundColor:'transparent', border: "none", boxShadow: "none" }}>
         <CardContent>
-          <Typography variant="h6" color="text.secondary" gutterBottom>{type}</Typography>
-          <Typography variant="h5">{title}</Typography>
-          <Typography color="text.secondary">{organization}</Typography>
-          <Typography color="text.secondary">{date}</Typography>
+          <Typography className="projectDate" variant="h6" color="text.secondary" gutterBottom>{project.date}</Typography>
+          <Typography className="projectName" variant="h5">{project.name}</Typography>
+          <Typography className="projectOrgName" color="text.secondary">{project.organization}</Typography>
+          <Typography className="projectTitle" color="text.secondary">{project.title}</Typography>
           <div>{renderDescription()}</div>
         </CardContent>
         <CardActions>
-          <Button size="small" href={link}>Learn More</Button>
+          {project.hasOwnProperty('demo_url') ? <Button className="projectButton" variant="outlined" href={project.demo_url}>Website</Button> : null}
+          {project.hasOwnProperty('code_url') ? <Button className="projectButton" variant="outlined" href={project.code_url}>Source Code</Button> : null}
+          {project.hasOwnProperty('org_url') ?<Button className="projectButton" variant="outlined" href={project.org_url}>About Organization</Button> : null}
         </CardActions>
       </Card>
     </div>

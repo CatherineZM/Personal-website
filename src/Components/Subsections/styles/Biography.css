@@ -12,12 +12,6 @@
     color: #11386e;
 }
 
-.biography #quoteAuthor{
-    width: 100%;
-    text-align: right;
-    margin-bottom: 0;
-}
-
 .biography .bioParagraph{
     text-align: left;
     margin-top: 2vh;

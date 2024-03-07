@@ -30,10 +30,10 @@ class Experience extends React.Component {
                 </Grid>
                 <VerticalTimeline lineColor='#11386e'>
                     <VerticalTimelineElement className="vertical-timeline-element--education"
-                                             contentStyle={{ background: '#CBE0F4', color: '#11386e' }}
-                                             contentArrowStyle={{ borderRight: '7px solid  #CBE0F4' }}
+                                             contentStyle={{ background: '#ACBEDD', color: '#11386e' }}
+                                             contentArrowStyle={{ borderRight: '7px solid  #ACBEDD' }}
                                              date={education.date}
-                                             iconStyle={{ background: '#CBE0F4', color: '#11386e' }}
+                                             iconStyle={{ background: '#ACBEDD', color: '#11386e' }}
                                              icon={<SchoolIcon/>}>
                         <h5 className="expType">Education</h5>
                         <h3 className="vertical-timeline-element-title">{education.title}</h3>
@@ -43,10 +43,10 @@ class Experience extends React.Component {
                     </VerticalTimelineElement>
 
                     <VerticalTimelineElement className="vertical-timeline-element--work"
-                                             contentStyle={{ background: '#F1CCE1', color: '#11386e' }}
-                                             contentArrowStyle={{ borderRight: '7px solid  #F1CCE1' }}
+                                             contentStyle={{ background: '#E3D7E6', color: '#11386e' }}
+                                             contentArrowStyle={{ borderRight: '7px solid  #E3D7E6' }}
                                              date={workExperience[0].date}
-                                             iconStyle={{ background: '#F1CCE1', color: '#11386e' }}
+                                             iconStyle={{ background: '#E3D7E6', color: '#11386e' }}
                                              icon={<LaptopIcon />}>
                         <h5 className="expType">Work - {workExperience[0].type}</h5>
                         <h3 className="vertical-timeline-element-title">{workExperience[0].title}</h3>
@@ -54,17 +54,17 @@ class Experience extends React.Component {
                         <p>{workExperience[0].description}</p>
                         <div className="expSkillList">
                             {workExperience[0].skillList.map((skill) => 
-                                <Chip className="expSkillListItem" key={skill} label={skill} />
+                                <Chip className="expSkillListItem" variant="outlined" key={skill} label={skill} />
                             )}
                         </div>
                         <Button className="expBtnDark" variant="outlined" href={workExperience[0].url}>About Organization</Button>
                     </VerticalTimelineElement>
 
                     <VerticalTimelineElement className="vertical-timeline-element--work"
-                                             contentStyle={{ background: '#5D7AB5', color: '#fff' }}
-                                             contentArrowStyle={{ borderRight: '7px solid  #5D7AB5' }}
+                                             contentStyle={{ background: '#CBE0F4', color: '#11386e' }}
+                                             contentArrowStyle={{ borderRight: '7px solid  #CBE0F4' }}
                                              date={workExperience[1].date}
-                                             iconStyle={{ background: '#5D7AB5', color: '#fff' }}
+                                             iconStyle={{ background: '#CBE0F4', color: '#11386e' }}
                                              icon={<TerminalIcon />}>
                         <h5 className="expType">Work - {workExperience[1].type}</h5>
                         <h3 className="vertical-timeline-element-title">{workExperience[1].title}</h3>
@@ -72,10 +72,10 @@ class Experience extends React.Component {
                         <p>{workExperience[1].description}</p>
                         <div className="expSkillList">
                             {workExperience[1].skillList.map((skill) => 
-                                <Chip className="expSkillListItem" key={skill} label={skill} />
+                                <Chip className="expSkillListItem" variant="outlined" key={skill} label={skill} />
                             )}
                         </div>
-                        <Button className="expBtnLight" variant="outlined" href={workExperience[1].url}>About Organization</Button>
+                        <Button className="expBtnDark" variant="outlined" href={workExperience[1].url}>About Organization</Button>
                     </VerticalTimelineElement>
                 </VerticalTimeline>
           </Grid>

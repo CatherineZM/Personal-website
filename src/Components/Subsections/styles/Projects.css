@@ -1,0 +1,25 @@
+.projects .sectionTitle{
+    font-weight: bold;
+    text-align: center;
+}
+
+.projects .projectCard{
+    background-color: rgba(255,255,255,0.7);
+    height: 100%;
+}
+
+.projects .projectDate{
+    font-size: medium;
+}
+
+.projects .projectName{
+    font-size: x-large;
+}
+
+.projects .projectTitle{
+    font-size: larger;
+}
+
+.projects .projectOrgName{
+    font-size: large;
+}

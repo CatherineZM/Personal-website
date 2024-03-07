@@ -54,6 +54,9 @@ class NavBar extends React.Component {
               <Link className="navLinkTab" to="experience" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
                 <span className="navLinkContent">Experience</span>
               </Link>
+              <Link className="navLinkTab" to="projects" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                <span className="navLinkContent">Projects</span>
+              </Link>
               <Link className="navLinkTab" to="contactMe" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
                 <span className="navLinkContent">Contact Me</span>
               </Link>

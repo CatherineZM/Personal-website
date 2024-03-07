@@ -25,13 +25,16 @@
     margin-top: 1vh;
 }
 
-.expSkillListItem{
+.experience .expSkillListItem{
+    background-color: transparent;
+    border-color: #11386e;
+    border-width: 1px;
     margin-bottom: 1vh;
     margin-right: 1vh;
 }
 
 .expSkillListItem span{
-    color: #fff;
+    color: #11386e;
     font-size: 0.8125rem;
 }
 
