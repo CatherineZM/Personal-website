@@ -29,22 +29,6 @@ class Projects extends React.Component {
                             <Grid item key={project.id} xs={12} md={3} style={{ height: '100%' }}>
                                 <InfoCard project={project} />
                             </Grid>
-                            // <Grid item key={project.id} xs={12} md={3} style={{ height: '100%' }}>
-                            //     <Card className="projectCard" >
-                            //         <CardContent>
-                            //             <h5 className="projectDate">{project.date}</h5>
-                            //             <h3 className="projectName">{project.name}</h3>
-                            //             <h4 className="projectTitle">{project.title}</h4>
-                            //             <h5 className="projectOrgName">{project.organization}</h5>
-                            //             <p className="projectDes">{project.description}</p>
-                            //         </CardContent>
-                            //         <CardActions>
-                            //             {project.hasOwnProperty('demo_url') ? <Button className="projectButton" variant="outlined" href={project.demo_url}>Website</Button> : null}
-                            //             {project.hasOwnProperty('code_url') ? <Button className="projectButton" variant="outlined" href={project.code_url}>Source Code</Button> : null}
-                            //             {project.hasOwnProperty('org_url') ?<Button className="projectButton" variant="outlined" href={project.org_url}>About Organization</Button> : null}
-                            //         </CardActions>
-                            //     </Card>
-                            // </Grid>
                         )
                     }
                     return null

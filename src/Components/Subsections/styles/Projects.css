@@ -6,6 +6,11 @@
 .projects .projectCard{
     background-color: rgba(255,255,255,0.7);
     height: 100%;
+    border-color: #11386e;
+}
+
+.projects .expandComp{
+    color: #11386e;
 }
 
 .projects .projectDate{
@@ -14,12 +19,37 @@
 
 .projects .projectName{
     font-size: x-large;
+    color: #11386e;
 }
 
 .projects .projectTitle{
     font-size: larger;
+    color: #11386e;
+
+}
+
+.projects .projectDescription{
+    color: #11386e;
 }
 
 .projects .projectOrgName{
     font-size: large;
+}
+
+.projects .proSkillListItem{
+    background-color: transparent;
+    border-color: #11386e;
+    border-width: 1px;
+    margin-top: 1vh;
+    margin-right: 1vh;
+}
+
+.proSkillListItem span{
+    color: #11386e;
+    font-size: 0.8125rem;
+}
+
+.projects .projectButton{
+    border-color: #11386e;
+    color: #11386e;
 }

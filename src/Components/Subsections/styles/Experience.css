@@ -42,10 +42,12 @@
     margin-top: 1rem;
     border-color: #11386e;
     color: #11386e;
+    margin-right: 5px;
 }
 
 .experience .expBtnLight{
     margin-top: 1rem;
     border-color: #fff;
     color: #fff;
+    margin-right: 5px;
 }

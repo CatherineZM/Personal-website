@@ -104,6 +104,16 @@
     margin-top: 2vh;
 }
 
+.valueCards .valueChip{
+    background-color: white;
+    color: black;
+    border-color: black;
+    border-width: 1px;
+    height: 4vmin;
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
 .valueContent .sectionTitle{
     margin-top: 16px;
 }
@@ -144,10 +154,6 @@
 
 path.react-flow__edge-path {
     stroke-width: 3;
-}
-
-.valueChip{
-    height: 4vmin !important;
 }
 
 .valueContent #structure{
