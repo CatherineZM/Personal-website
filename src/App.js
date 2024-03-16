@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // Personal Website
 import HomePage from "./Components/HomePage";
+import ExpPage from "./Components/ExpPage";
 
 // Capstone Content
 import Capstone from "./Capstone/MainPage";
@@ -54,6 +55,7 @@ class App extends React.Component {
             <Routes>
               {/* Personal Website */}
               <Route path="/" element={<HomePage />} />
+              <Route path="/experience" element={<ExpPage />} />
 
               {/* Capstone Content */}
               <Route path="/value" element={<Capstone />} />

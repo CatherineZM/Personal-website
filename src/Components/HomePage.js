@@ -9,6 +9,8 @@ import Biography from './Subsections/Biography.component';
 import Qualifications from './Subsections/Qualifications.component';
 import Experience from './Subsections/Experience.component';
 import Projects from './Subsections/Projects.component';
+import Interests from './Subsections/Interests.component';
+import ContactMe from './Subsections/ContactMe.component';
 
 class HomePage extends React.Component {
   constructor(props){
@@ -33,6 +35,10 @@ class HomePage extends React.Component {
         </div>
         <div className="proj section">
           <Projects />
+          <Interests />
+        </div>
+        <div className="contactMe section">
+          <ContactMe />
         </div>
       </div>
     )

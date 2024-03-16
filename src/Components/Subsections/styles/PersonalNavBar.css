@@ -24,6 +24,7 @@
 
 #navLink .navLinkTab{
     padding-right: 3vmin;
+    text-align: center;
 }
 
 #navLink a{
@@ -48,4 +49,8 @@
 
 .nav-white{
     background-color: white;
+}
+
+.navContainer .navLinkCollapse{
+    background-color:white;
 }

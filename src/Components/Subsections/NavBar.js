@@ -36,31 +36,34 @@ class NavBar extends React.Component {
   render() {
     return (
       <div id="navbar">
-        <Navbar className={this.state.colorChange ? 'nav-white' : 'nav-transparent'}>
+        <Navbar className={this.state.colorChange ? 'nav-white' : 'nav-transparent'} collapseOnSelect expand="md">
           <Container className="navContainer">
             <Navbar.Brand className="personal-logo" href="/">
               <img className="d-inline-block align-top" src={MoZhou} alt="Mo Zhou"/>
             </Navbar.Brand>
-            <Nav className="justify-content-end" id="navLink">
-              <Link className="navLinkTab" to="selfIntro" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <span className="navLinkContent">Home</span>
-              </Link>
-              <Link className="navLinkTab" to="biography" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <span className="navLinkContent">About Me</span>
-              </Link>
-              <Link className="navLinkTab" to="qualification" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <span className="navLinkContent">Qualifications</span>
-              </Link>
-              <Link className="navLinkTab" to="experience" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <span className="navLinkContent">Experience</span>
-              </Link>
-              <Link className="navLinkTab" to="projects" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <span className="navLinkContent">Projects</span>
-              </Link>
-              <Link className="navLinkTab" to="contactMe" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
-                <span className="navLinkContent">Contact Me</span>
-              </Link>
-            </Nav>
+            <Navbar.Toggle aria-controls="navContent" /> 
+            <Navbar.Collapse id="navContent" className={"justify-content-end "+(this.state.colorChange ? 'navLinkCollapse' : 'nav-transparent')}>
+              <Nav className="justify-content-end" id="navLink">
+                <Link className="navLinkTab" to="selfIntro" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                  <span className="navLinkContent">Home</span>
+                </Link>
+                <Link className="navLinkTab" to="biography" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                  <span className="navLinkContent">About Me</span>
+                </Link>
+                <Link className="navLinkTab" to="qualification" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                  <span className="navLinkContent">Qualifications</span>
+                </Link>
+                <Link className="navLinkTab" to="experience" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                  <span className="navLinkContent">Experience</span>
+                </Link>
+                <Link className="navLinkTab" to="projects" spy={true} smooth={false} offset={-100} duration={200} activeClass="active">
+                  <span className="navLinkContent">Projects</span>
+                </Link>
+                <Link className="navLinkTab" to="contactMe" spy={true} smooth={false} offset={-400} duration={200} activeClass="active">
+                  <span className="navLinkContent">Contact Me</span>
+                </Link>
+              </Nav>
+            </Navbar.Collapse>
           </Container>
         </Navbar>
       </div>

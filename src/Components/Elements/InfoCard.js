@@ -29,7 +29,7 @@ const InfoCard = ({ project }) => {
 
   return (
     <div className="proj-cards" elevation={0}>
-      <Card className="projectCard" variant="outlined" style={{ backgroundColor:'transparent' }}>
+      <Card className="projectCard" variant="outlined" style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'column'}}>
         <CardContent>
           <Typography className="projectDate" variant="h6" color="text.secondary" gutterBottom>{project.date}</Typography>
           <Typography className="projectName" variant="h5">{project.name}</Typography>
@@ -40,7 +40,7 @@ const InfoCard = ({ project }) => {
             <Chip className="proSkillListItem" variant="outlined" key={skill} label={skill} />
           )}
         </CardContent>
-        <CardActions>
+        <CardActions className="projectActions">
           {project.hasOwnProperty('demo_url') ? <Button className="projectButton" variant="outlined" href={project.demo_url}>Website</Button> : null}
           {project.hasOwnProperty('code_url') ? <Button className="projectButton" variant="outlined" href={project.code_url}>Source Code</Button> : null}
           {project.hasOwnProperty('org_url') ? <Button className="projectButton" variant="outlined" href={project.org_url}>About Organization</Button> : null}

@@ -63,10 +63,11 @@
             "title": "Team Leader",
             "organization": "University of Toronto",
             "date": "May 2022 - Apr 2023",
-            "description": "A machine learning model that detects human value based on The Schwartz Theory of Basic Values. \n The model achieved 93% accuracy with an F1-score of 0.93. \n The model has a GPT2 transformer and CNN classification head.",
+            "description": "A project website to showcase a machine learning project that detects human value based on The Schwartz Theory of Basic Values.",
+            "detail_description": "The model achieved 93% accuracy with an F1-score of 0.93. The model has a GPT2 transformer and CNN classification head.",
             "demo_url": "https://mozhou.ca/value",
             "code_url": "https://github.com/CatherineZM/Personal-website/tree/master/src/Capstone",
-            "skillList": ["natural language processing", "Python", "JavaScript", "React"]
+            "skillList": ["Python", "Natural Language Processing", "JavaScript", "ReactJS"]
         },{
             "id": 2,
             "name": "VEEP Website Upgrade", 
@@ -74,10 +75,10 @@
             "title": "Supervisor",
             "organization": "VEEP",
             "date": "Oct 2021 - Apr 2022",
-            "description": "Developed website for organization",
+            "description": "An organization website to promote a student club called Volunteer Engineering Experience Program.",
             "demo_url": "https://veep.skule.ca",
             "code_url": "https://github.com/UofT-VEEP/VEEP-Website",
-            "skillList": ["JavaScript", "React"]
+            "skillList": ["JavaScript", "ReactJS", "NodeJS", "Agile", "Scrum", "Continuous Development"]
         },{
             "id": 3,
             "name": "Mobile Learning Platform", 
@@ -85,9 +86,9 @@
             "title": "Project Manager",
             "organization": "Spelling Bee of Canada",
             "date": "Jan - May 2021",
-            "description": "Upgrade mobile learning platform",
+            "description": "An online mobile learning platform for participants of the Spelling Bee of Canada to prepare for the competition.",
             "org_url": "https://www.spellingbeeofcanada.ca/",
-            "skillList": ["ASP.NET", "CSS"]
+            "skillList": ["ASP.NET", "JavaScript", "CSS", "Agile", "Scrum", "Continuous Development"]
         },{
             "id": 4,
             "name": "Cook Pad", 

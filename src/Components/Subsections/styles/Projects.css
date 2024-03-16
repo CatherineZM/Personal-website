@@ -3,9 +3,13 @@
     text-align: center;
 }
 
+.projects .projectCardContainer{
+    min-height: 100%;
+}
+
 .projects .projectCard{
-    background-color: rgba(255,255,255,0.7);
-    height: 100%;
+    background-color: rgba(255,255,255,0.5);
+    min-height: 100%;
     border-color: #11386e;
 }
 
@@ -25,7 +29,6 @@
 .projects .projectTitle{
     font-size: larger;
     color: #11386e;
-
 }
 
 .projects .projectDescription{
@@ -49,7 +52,34 @@
     font-size: 0.8125rem;
 }
 
+.projects .projectActions{
+    align-items: center;
+}
+
 .projects .projectButton{
     border-color: #11386e;
     color: #11386e;
+    display: block;
+    margin: auto;
+    margin-bottom: 2vmin;
+}
+
+.projects .projectLinkBox{
+    display: flex;
+    justify-content: center;
+}
+
+.projects .projectLink{
+    margin-top: 1vmin;
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration-line: underline;
+    color: #11386e;
+}
+
+.projects .projectLink:hover{
+    text-decoration: underline;
+    box-shadow: none;
+    text-shadow: 2px 2px grey;
+    background-color: transparent;
 }

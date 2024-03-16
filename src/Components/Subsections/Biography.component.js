@@ -26,7 +26,7 @@ class Biography extends React.Component {
                         I applied to Electrical & Computer Engineering at the University of Toronto just because I thought the industry has a large demand for people.
                     </Typography>
                     <Typography className="bioParagraph" variant="body1" gutterBottom>
-                        I was still lost for the first two years in Canada. Until one course changed my world - CSC309: Introduction to web programming. 
+                        I was still lost for the first two years in Canada. Until one course changed my world - CSC309: Programming on the Web. 
                         I wanted to learn new knowledge and experience a different aspect of programming. 
                         I didn't expect that this course would change my life. 
                         I instantly fell in love with the ability to visualize my code and see the vivid components on the screen.
@@ -44,8 +44,7 @@ class Biography extends React.Component {
                         <Grid item={true} xs={6} >
                             <Button className="bioBtn" variant="outlined" 
                                     onClick={(e) => {e.preventDefault();
-                                                    window.scrollTo({top: document.querySelector("#contactMe").offsetTop,
-                                                    behavior: "smooth"});}}>
+                                                    window.location.replace('/#contactMe');}}>
                                 Contact Me
                             </Button>
                         </Grid>

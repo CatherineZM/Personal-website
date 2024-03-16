@@ -1,0 +1,25 @@
+.interests .sectionTitle{
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+.interests .interestCard{
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    border-color: #11386e;
+}
+
+.interests .interestName{
+    font-size: x-large;
+    color: #11386e;
+}
+
+.interests .interestDes{
+    color: #11386e;
+}
+
+.interests .interestCaption{
+    background-color: rgba(255,255,255,0.7);
+    color: #11386e;
+}

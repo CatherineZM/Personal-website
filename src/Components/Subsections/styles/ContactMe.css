@@ -1,0 +1,38 @@
+.contactMe .sectionTitle{
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.contactMe .contactIcon{
+    color: white;
+}
+
+.contactMe span{
+    color: white;
+}
+
+.contactMe .contactButton{
+    color: white;
+    border-color: white;
+}
+
+.contactMe .contactButton:hover{
+    background-color: white;
+    border-color: white;
+    color: #11386e;
+}
+
+.contactMe .formFeedback{
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+.contactMe .copyright{
+    margin-top: 4vmin;
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: white;
+    text-align: center;
+}
