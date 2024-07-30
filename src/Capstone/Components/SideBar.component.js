@@ -5,7 +5,7 @@ import '../styles/ValuePage.css';
 
 import SideBarList from './SideBarList.component';
 
-import { Drawer, Divider, IconButton} from '@mui/material';
+import { Drawer, Divider, IconButton } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';

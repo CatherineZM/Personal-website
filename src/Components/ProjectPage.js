@@ -1,8 +1,11 @@
 import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './ProjectPage.css';
 
-class ExpPage extends React.Component {
+import ProjectNav from './ProjectElements/projectNav.component';
+
+class ProjectPage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -12,12 +15,13 @@ class ExpPage extends React.Component {
   render() {
     return (
       <div>
+        <ProjectNav />
         <div>
-            Sorry, this page is being worked on
+          
         </div>
       </div>
     )
   }
 }
 
-export default ExpPage;
+export default ProjectPage;

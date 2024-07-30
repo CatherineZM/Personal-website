@@ -3,7 +3,7 @@ import { Grid, Typography, Button } from '@mui/material';
 import Alert from '@mui/material/Alert';
 
 import portrait from '../../img/photo.jpg';
-import resume from  '../Mo_Zhou_Resume.pdf';
+import resume from  '../Catherine_Z_Resume.pdf';
 import './styles/Biography.css';
 
 class Biography extends React.Component {
@@ -37,7 +37,7 @@ class Biography extends React.Component {
                     </Typography>
                     <Grid container={true} item xs={12} spacing={1}> 
                         <Grid item={true} xs={6} >
-                            <Button className="bioBtn" variant="outlined" download="Mo_Zhou_Resume" href={resume}>
+                            <Button className="bioBtn" variant="outlined" download="Catherine_Zhou_Resume" href={resume}>
                                 Download Resume
                             </Button>
                         </Grid>

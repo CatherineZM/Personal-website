@@ -31,8 +31,8 @@ class Banner extends React.Component {
         <Container>
           <div className="bannerInfo">
             <h2>Hello There! </h2>
-            <h1>I'm Mo (Catherine) Zhou</h1>
-            <h3>A <strong>software developer</strong> and a recent graduate in <strong>Computer Engineering</strong>.</h3>
+            <h1>I'm Catherine</h1>
+            <h3>A <strong>full stack developer</strong> and a recent graduate in <strong>Computer Engineering</strong>.</h3>
           </div>
           <Grid container className="bannerBtns" rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             <Grid item xs={3}>

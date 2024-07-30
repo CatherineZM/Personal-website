@@ -5,7 +5,7 @@ import '../styles/Footer.css';
 
 import logo from "../Components/logo.png";
 
-import {Grid, Container, Typography, Divider, Item} from '@mui/material';
+import {Grid, Container, Typography, Divider } from '@mui/material';
 
 class Footer extends React.Component {
   constructor(props){

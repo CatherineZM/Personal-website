@@ -38,6 +38,14 @@
     },
     "workExperience": [
         {
+            "type": "Freelance",
+            "title": "Full Stack Developer",
+            "organization": "MG Aesthetic Center",
+            "date": "Mar 2024 - Apr 2024",
+            "description": "Responsible for full stack development of the client's website.",
+            "url": "https://letsstopaids.org/",
+            "skillList": ["JavaScript", "ReactJS", "CSS", "NodeJS"]
+        },{
             "type": "Volunteer",
             "title": "Full Stack Developer",
             "organization": "LetsStopAIDS",
