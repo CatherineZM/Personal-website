@@ -2,6 +2,7 @@ import Menu from "@/components/utils/navbar";
 import getNavData from "@/modules/fetchData/getNavData";
 import getLandData from "@/modules/fetchData/getLandData";
 import Banner from "@/components/homePage/banner";
+import { Locale } from "@/modules/gql/graphql";
 
 interface PageProps {
     params: {
@@ -9,18 +10,24 @@ interface PageProps {
     };
 }
 
+export async function generateStaticParams() {
+    return [{ locale: "en" }, { locale: "zh" }];
+}
+
 export default async function Home({params}: PageProps): Promise<JSX.Element> {
-     const { locale } = params;
+    const supportedLocales: Locale[] = [Locale.En, Locale.Zh];
+    const locale = supportedLocales.includes(params.locale as Locale)
+        ? (params.locale as Locale)
+        : Locale.En;
 
-    const navData = getNavData();
-    const landData = getLandData();
+    // Fetch localized data
+    const navData = await getNavData(locale);
+    const landData = await getLandData(locale);
 
-    const navbar = await navData;
-    const landing = await landData;
     return (
         <div className="">
-            <Menu data={navbar.navData} locale={locale} />
-            <Banner data={landing.landData} locale={locale} />
+            <Menu data={navData.navData} locale={locale} />
+            <Banner data={landData.landData} locale={locale} />
             <div className="bg-egg flex flex-row"></div>
         </div>
     );

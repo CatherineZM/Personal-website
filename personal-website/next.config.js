@@ -25,7 +25,7 @@ const nextConfig = withBundleAnalyzer({
     },
     async rewrites() {
         const rewrites = [
-            { source: '/en/:path*', destination: '/:path*' },
+            { source: '/en/:path*', destination: '/en/:path*' },
             { source: '/zh/:path*', destination: '/zh/:path*' }
         ]
         return rewrites;

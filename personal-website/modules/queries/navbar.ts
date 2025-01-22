@@ -1,17 +1,17 @@
 import { gql } from "../gql";
 
 export const NAVBAR_DATA = gql(`
-    query NavbarData {
-        navbars {
+    query NavbarData($locales: [Locale!]!, $includeCurrent: Boolean!) {
+        navbars(locales: $locales) {
             logo {
                 media
-                localizations {
+                localizations(locales: $locales, includeCurrent: $includeCurrent) {
                     locale
                     altText
                 }
             }
             navlink {
-                localizations {
+                localizations(locales: $locales, includeCurrent: $includeCurrent) {
                     locale
                     text
                 }
@@ -19,7 +19,7 @@ export const NAVBAR_DATA = gql(`
                 buttonId
             }
             navbtn {
-                localizations {
+                localizations(locales: $locales, includeCurrent: $includeCurrent) {
                     locale
                     text
                 }

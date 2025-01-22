@@ -1,19 +1,23 @@
 // GraphQL specific
 import { gqlClient } from "@/modules/gql/graphqlClient";
 import { LANDING_DATA } from "@/modules/queries/index";
+import { Locale } from "@/modules/gql/graphql";
 
-export default async function getLandData(): Promise<{
+export default async function getLandData(locale: Locale): Promise<{
     landData: any;
 }> {
-    const data = await gqlClient.request(LANDING_DATA);
+    const variables = {
+        locales: [locale],
+        includeCurrent: true,
+    };
+
+    const data = await gqlClient.request(LANDING_DATA, variables);
 
     const pageData = data.landings[0];
 
     const landData = {
         greet: pageData.greet,
-        name: pageData.name,
-        role: pageData.role,
-        identity: pageData.identity,
+        localizations: pageData.localizations,
         socialMedia: pageData.socialMedia,
         icon: pageData.icon
     };

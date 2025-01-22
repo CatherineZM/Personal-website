@@ -2,19 +2,26 @@
 import { gqlClient } from "@/modules/gql/graphqlClient";
 import { NAVBAR_DATA } from "@/modules/queries/index";
 
-export default async function getNavData(): Promise<{
+import { Locale } from "@/modules/gql/graphql";
+
+export default async function getNavData(locale: Locale): Promise<{
     navData: any;
 }> {
-    const data = await gqlClient.request(NAVBAR_DATA);
+    console.log("Fetching Navbar Data with Locale:", locale);
+    const variables = {
+        locales: [locale],
+        includeCurrent: true,
+    };
+    const data = await gqlClient.request(NAVBAR_DATA, variables);
 
     const pageData = data.navbars[0];
 
     const navData = {
         logo: {
             media: pageData.logo?.media,
-            altText: pageData.logo?.altText,
+            localizations: pageData.logo?.localizations
         },
-        navlink: pageData.navlink, 
+        navlink: pageData.navlink,
         navbtn: pageData.navbtn
     };
 

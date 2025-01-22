@@ -1,17 +1,17 @@
 import { gql } from "../gql";
 
 export const LANDING_DATA = gql(`
-    query LandingData {
-        landings {
+    query LandingData($locales: [Locale!]!, $includeCurrent: Boolean!) {
+        landings(locales: $locales) {
             greet
-            localizations {
+            localizations(locales: $locales, includeCurrent: $includeCurrent) {
                 locale
                 name
                 role
                 identity
             }
             socialMedia {
-                localizations {
+                localizations(locales: $locales, includeCurrent: $includeCurrent) {
                     locale
                     text
                 }
@@ -20,7 +20,7 @@ export const LANDING_DATA = gql(`
             }
             icon {
                 media
-                localizations {
+                localizations(locales: $locales, includeCurrent: $includeCurrent) {
                     locale
                     altText
                 }

@@ -16,6 +16,7 @@
     "autoprefixer": "^10.4.20",
     "bootstrap": "^5.2.0-beta1",
     "chart.js": "^4.4.1",
+    "codegen": "^0.1.0",
     "dotenv": "^16.4.7",
     "graphql-request": "^7.1.2",
     "postcss": "^8.5.1",
