@@ -45,6 +45,7 @@ class Qualifications extends React.Component {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
+                <figure><embed src="https://wakatime.com/share/@018df785-897f-45ba-b9a4-4ae9f6045b57/ee9aa30d-9628-4f9e-a1d8-67ba63de6e3a.svg"></embed></figure>
                     <Typography variant='h5' component="h3" className="skillSubtitle">
                         Programming Languages
                     </Typography>
