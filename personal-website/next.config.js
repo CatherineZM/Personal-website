@@ -4,10 +4,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true'
 });
 
-const i18nConfig = {
-    locales: ['en', 'zh'],
-    defaultLocale: 'en',
-};
+// const i18nConfig = {
+//     locales: ['en', 'zh'],
+//     defaultLocale: 'en',
+// };
 
 const nextConfig = withBundleAnalyzer({
     output: process.env.EXPORT_MODE === 'true' ? 'export' : undefined,
@@ -25,6 +25,7 @@ const nextConfig = withBundleAnalyzer({
     },
     async rewrites() {
         const rewrites = [
+            { source: '/', destination: '/en' },
             { source: '/en/:path*', destination: '/en/:path*' },
             { source: '/zh/:path*', destination: '/zh/:path*' }
         ]

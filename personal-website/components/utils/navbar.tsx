@@ -122,6 +122,14 @@ export default function Menu(props: NavProps): JSX.Element {
         }
     }
 
+    const normalizePath = (path: string) => {
+        const pathWithoutLocale = path.replace(/^\/(en|zh)/, "");
+
+        return pathWithoutLocale.startsWith("/")
+            ? pathWithoutLocale
+            : `/${pathWithoutLocale}`;
+    };
+
     return (
         <div
             className={`px-mobileX md:px-tabletX 2xl:px-desktopX 3xl:px-plusDesktopX py-4 w-full fixed z-40 h-[120px] flex flex-row justify-between ${
@@ -135,9 +143,10 @@ export default function Menu(props: NavProps): JSX.Element {
                 {data.navlink.map((item, index) => (
                     <div key={index} className="px-2 rounded">
                         <a
-                            href={item.link}
+                            href={`${locale}/${item.link}/`}
                             className={`uppercase font-medium text-blue border-b-2 ${
-                                currentPath === item.link
+                                normalizePath(currentPath) ===
+                                normalizePath(item.link)
                                     ? "border-blue"
                                     : "border-transparent hover:border-blue"
                             }`}

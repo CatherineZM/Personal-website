@@ -1294,6 +1294,7 @@ export type Capstone = Entity & Node & {
   locale: Locale;
   /** Get the other localizations for this document */
   localizations: Array<Capstone>;
+  logo?: Maybe<Media>;
   productUsage: Array<Scalars['String']['output']>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
@@ -1346,6 +1347,12 @@ export type CapstoneHistoryArgs = {
 export type CapstoneLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean']['input'];
   locales?: Array<Locale>;
+};
+
+
+export type CapstoneLogoArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
 };
 
 
@@ -1452,6 +1459,7 @@ export type CapstoneCreateInput = {
   introduction?: InputMaybe<Scalars['String']['input']>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<CapstoneCreateLocalizationsInput>;
+  logo?: InputMaybe<MediaCreateOneInlineInput>;
   /** productUsage input for default locale (en) */
   productUsage?: InputMaybe<Array<Scalars['String']['input']>>;
   reference?: InputMaybe<Scalars['String']['input']>;
@@ -1564,6 +1572,7 @@ export type CapstoneManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  logo?: InputMaybe<MediaWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -1664,6 +1673,7 @@ export type CapstoneUpdateInput = {
   introduction?: InputMaybe<Scalars['String']['input']>;
   /** Manage document localizations */
   localizations?: InputMaybe<CapstoneUpdateLocalizationsInput>;
+  logo?: InputMaybe<MediaUpdateOneInlineInput>;
   /** productUsage input for default locale (en) */
   productUsage?: InputMaybe<Array<Scalars['String']['input']>>;
   reference?: InputMaybe<Scalars['String']['input']>;
@@ -1904,6 +1914,7 @@ export type CapstoneWhereInput = {
   introduction_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
   introduction_starts_with?: InputMaybe<Scalars['String']['input']>;
+  logo?: InputMaybe<MediaWhereInput>;
   /** Matches if the field array contains *all* items provided to the filter and order does match */
   productUsage?: InputMaybe<Array<Scalars['String']['input']>>;
   /** Matches if the field array contains *all* items provided to the filter */
@@ -2800,12 +2811,15 @@ export type Landing = Entity & Node & {
   /** Get the other localizations for this document */
   localizations: Array<Landing>;
   name?: Maybe<Scalars['String']['output']>;
+  projectHighlight: Array<PhotoWTextCard>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   /** User that last published this document */
   publishedBy?: Maybe<User>;
   role?: Maybe<Scalars['String']['output']>;
   scheduledIn: Array<ScheduledOperation>;
+  skillDescription?: Maybe<Scalars['String']['output']>;
+  skillList: Array<SkillList>;
   socialMedia: Array<Button>;
   /** System stage field */
   stage: Stage;
@@ -2853,6 +2867,19 @@ export type LandingLocalizationsArgs = {
 };
 
 
+export type LandingProjectHighlightArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<PhotoWTextCardOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PhotoWTextCardWhereInput>;
+};
+
+
 export type LandingPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
@@ -2873,6 +2900,19 @@ export type LandingScheduledInArgs = {
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
+};
+
+
+export type LandingSkillListArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<SkillListOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<SkillListWhereInput>;
 };
 
 
@@ -2926,8 +2966,12 @@ export type LandingCreateInput = {
   localizations?: InputMaybe<LandingCreateLocalizationsInput>;
   /** name input for default locale (en) */
   name?: InputMaybe<Scalars['String']['input']>;
+  projectHighlight?: InputMaybe<PhotoWTextCardCreateManyInlineInput>;
   /** role input for default locale (en) */
   role?: InputMaybe<Scalars['String']['input']>;
+  /** skillDescription input for default locale (en) */
+  skillDescription?: InputMaybe<Scalars['String']['input']>;
+  skillList?: InputMaybe<SkillListCreateManyInlineInput>;
   socialMedia?: InputMaybe<ButtonCreateManyInlineInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
@@ -2937,6 +2981,7 @@ export type LandingCreateLocalizationDataInput = {
   identity?: InputMaybe<Array<Scalars['String']['input']>>;
   name?: InputMaybe<Scalars['String']['input']>;
   role?: InputMaybe<Scalars['String']['input']>;
+  skillDescription?: InputMaybe<Scalars['String']['input']>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
@@ -3042,6 +3087,9 @@ export type LandingManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  projectHighlight_every?: InputMaybe<PhotoWTextCardWhereInput>;
+  projectHighlight_none?: InputMaybe<PhotoWTextCardWhereInput>;
+  projectHighlight_some?: InputMaybe<PhotoWTextCardWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -3061,6 +3109,9 @@ export type LandingManyWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  skillList_every?: InputMaybe<SkillListWhereInput>;
+  skillList_none?: InputMaybe<SkillListWhereInput>;
+  skillList_some?: InputMaybe<SkillListWhereInput>;
   socialMedia_every?: InputMaybe<ButtonWhereInput>;
   socialMedia_none?: InputMaybe<ButtonWhereInput>;
   socialMedia_some?: InputMaybe<ButtonWhereInput>;
@@ -3097,6 +3148,8 @@ export enum LandingOrderByInput {
   PublishedAtDesc = 'publishedAt_DESC',
   RoleAsc = 'role_ASC',
   RoleDesc = 'role_DESC',
+  SkillDescriptionAsc = 'skillDescription_ASC',
+  SkillDescriptionDesc = 'skillDescription_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC'
 }
@@ -3110,8 +3163,12 @@ export type LandingUpdateInput = {
   localizations?: InputMaybe<LandingUpdateLocalizationsInput>;
   /** name input for default locale (en) */
   name?: InputMaybe<Scalars['String']['input']>;
+  projectHighlight?: InputMaybe<PhotoWTextCardUpdateManyInlineInput>;
   /** role input for default locale (en) */
   role?: InputMaybe<Scalars['String']['input']>;
+  /** skillDescription input for default locale (en) */
+  skillDescription?: InputMaybe<Scalars['String']['input']>;
+  skillList?: InputMaybe<SkillListUpdateManyInlineInput>;
   socialMedia?: InputMaybe<ButtonUpdateManyInlineInput>;
 };
 
@@ -3119,6 +3176,7 @@ export type LandingUpdateLocalizationDataInput = {
   identity?: InputMaybe<Array<Scalars['String']['input']>>;
   name?: InputMaybe<Scalars['String']['input']>;
   role?: InputMaybe<Scalars['String']['input']>;
+  skillDescription?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type LandingUpdateLocalizationInput = {
@@ -3163,12 +3221,15 @@ export type LandingUpdateManyInput = {
   name?: InputMaybe<Scalars['String']['input']>;
   /** role input for default locale (en) */
   role?: InputMaybe<Scalars['String']['input']>;
+  /** skillDescription input for default locale (en) */
+  skillDescription?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type LandingUpdateManyLocalizationDataInput = {
   identity?: InputMaybe<Array<Scalars['String']['input']>>;
   name?: InputMaybe<Scalars['String']['input']>;
   role?: InputMaybe<Scalars['String']['input']>;
+  skillDescription?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type LandingUpdateManyLocalizationInput = {
@@ -3333,6 +3394,9 @@ export type LandingWhereInput = {
   name_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
   name_starts_with?: InputMaybe<Scalars['String']['input']>;
+  projectHighlight_every?: InputMaybe<PhotoWTextCardWhereInput>;
+  projectHighlight_none?: InputMaybe<PhotoWTextCardWhereInput>;
+  projectHighlight_some?: InputMaybe<PhotoWTextCardWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -3371,6 +3435,28 @@ export type LandingWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  skillDescription?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  skillDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  skillDescription_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  skillDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  skillDescription_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  skillDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  skillDescription_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  skillDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  skillDescription_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  skillDescription_starts_with?: InputMaybe<Scalars['String']['input']>;
+  skillList_every?: InputMaybe<SkillListWhereInput>;
+  skillList_none?: InputMaybe<SkillListWhereInput>;
+  skillList_some?: InputMaybe<SkillListWhereInput>;
   socialMedia_every?: InputMaybe<ButtonWhereInput>;
   socialMedia_none?: InputMaybe<ButtonWhereInput>;
   socialMedia_some?: InputMaybe<ButtonWhereInput>;
@@ -5637,14 +5723,16 @@ export enum PhotoWTextCardOrderByInput {
   IdDesc = 'id_DESC'
 }
 
-export type PhotoWTextCardParent = Capstone;
+export type PhotoWTextCardParent = Capstone | Landing;
 
 export type PhotoWTextCardParentConnectInput = {
   Capstone?: InputMaybe<CapstoneConnectInput>;
+  Landing?: InputMaybe<LandingConnectInput>;
 };
 
 export type PhotoWTextCardParentCreateInput = {
   Capstone?: InputMaybe<CapstoneCreateInput>;
+  Landing?: InputMaybe<LandingCreateInput>;
 };
 
 export type PhotoWTextCardParentCreateManyInlineInput = {
@@ -5663,6 +5751,7 @@ export type PhotoWTextCardParentCreateOneInlineInput = {
 
 export type PhotoWTextCardParentUpdateInput = {
   Capstone?: InputMaybe<CapstoneUpdateInput>;
+  Landing?: InputMaybe<LandingUpdateInput>;
 };
 
 export type PhotoWTextCardParentUpdateManyInlineInput = {
@@ -5684,6 +5773,7 @@ export type PhotoWTextCardParentUpdateManyInlineInput = {
 
 export type PhotoWTextCardParentUpdateManyWithNestedWhereInput = {
   Capstone?: InputMaybe<CapstoneUpdateManyWithNestedWhereInput>;
+  Landing?: InputMaybe<LandingUpdateManyWithNestedWhereInput>;
 };
 
 export type PhotoWTextCardParentUpdateOneInlineInput = {
@@ -5703,18 +5793,22 @@ export type PhotoWTextCardParentUpdateOneInlineInput = {
 
 export type PhotoWTextCardParentUpdateWithNestedWhereUniqueInput = {
   Capstone?: InputMaybe<CapstoneUpdateWithNestedWhereUniqueInput>;
+  Landing?: InputMaybe<LandingUpdateWithNestedWhereUniqueInput>;
 };
 
 export type PhotoWTextCardParentUpsertWithNestedWhereUniqueInput = {
   Capstone?: InputMaybe<CapstoneUpsertWithNestedWhereUniqueInput>;
+  Landing?: InputMaybe<LandingUpsertWithNestedWhereUniqueInput>;
 };
 
 export type PhotoWTextCardParentWhereInput = {
   Capstone?: InputMaybe<CapstoneWhereInput>;
+  Landing?: InputMaybe<LandingWhereInput>;
 };
 
 export type PhotoWTextCardParentWhereUniqueInput = {
   Capstone?: InputMaybe<CapstoneWhereUniqueInput>;
+  Landing?: InputMaybe<LandingWhereUniqueInput>;
 };
 
 export type PhotoWTextCardUpdateInput = {
@@ -7377,12 +7471,20 @@ export type SkillList = Entity & {
   localizations: Array<SkillList>;
   /** System stage field */
   stage: Stage;
+  subItem: Array<Scalars['String']['output']>;
 };
 
 
 export type SkillListLocalizationsArgs = {
   includeCurrent?: Scalars['Boolean']['input'];
   locales?: Array<Locale>;
+};
+
+export type SkillListConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: SkillListWhereUniqueInput;
 };
 
 /** A connection to a list of items. */
@@ -7396,15 +7498,20 @@ export type SkillListConnection = {
 };
 
 export type SkillListCreateInput = {
+  /** category input for default locale (en) */
   category: Scalars['String']['input'];
   /** description input for default locale (en) */
   description?: InputMaybe<Scalars['String']['input']>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<SkillListCreateLocalizationsInput>;
+  /** subItem input for default locale (en) */
+  subItem?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type SkillListCreateLocalizationDataInput = {
+  category: Scalars['String']['input'];
   description?: InputMaybe<Scalars['String']['input']>;
+  subItem?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type SkillListCreateLocalizationInput = {
@@ -7416,6 +7523,16 @@ export type SkillListCreateLocalizationInput = {
 export type SkillListCreateLocalizationsInput = {
   /** Create localizations for the newly-created document */
   create?: InputMaybe<Array<SkillListCreateLocalizationInput>>;
+};
+
+export type SkillListCreateManyInlineInput = {
+  /** Create and connect multiple existing SkillList documents */
+  create?: InputMaybe<Array<SkillListCreateInput>>;
+};
+
+export type SkillListCreateOneInlineInput = {
+  /** Create and connect one SkillList document */
+  create?: InputMaybe<SkillListCreateInput>;
 };
 
 export type SkillListCreateWithPositionInput = {
@@ -7444,25 +7561,6 @@ export type SkillListManyWhereInput = {
   OR?: InputMaybe<Array<SkillListWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>;
-  category?: InputMaybe<Scalars['String']['input']>;
-  /** All values containing the given string. */
-  category_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values ending with the given string. */
-  category_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are contained in given list. */
-  category_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  category_not?: InputMaybe<Scalars['String']['input']>;
-  /** All values not containing the given string. */
-  category_not_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values not ending with the given string */
-  category_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are not contained in given list. */
-  category_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** All values not starting with the given string. */
-  category_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values starting with the given string. */
-  category_starts_with?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['ID']['input']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']['input']>;
@@ -7490,19 +7588,106 @@ export enum SkillListOrderByInput {
   DescriptionAsc = 'description_ASC',
   DescriptionDesc = 'description_DESC',
   IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC'
+  IdDesc = 'id_DESC',
+  SubItemAsc = 'subItem_ASC',
+  SubItemDesc = 'subItem_DESC'
 }
 
+export type SkillListParent = Landing;
+
+export type SkillListParentConnectInput = {
+  Landing?: InputMaybe<LandingConnectInput>;
+};
+
+export type SkillListParentCreateInput = {
+  Landing?: InputMaybe<LandingCreateInput>;
+};
+
+export type SkillListParentCreateManyInlineInput = {
+  /** Connect multiple existing SkillListParent documents */
+  connect?: InputMaybe<Array<SkillListParentWhereUniqueInput>>;
+  /** Create and connect multiple existing SkillListParent documents */
+  create?: InputMaybe<Array<SkillListParentCreateInput>>;
+};
+
+export type SkillListParentCreateOneInlineInput = {
+  /** Connect one existing SkillListParent document */
+  connect?: InputMaybe<SkillListParentWhereUniqueInput>;
+  /** Create and connect one SkillListParent document */
+  create?: InputMaybe<SkillListParentCreateInput>;
+};
+
+export type SkillListParentUpdateInput = {
+  Landing?: InputMaybe<LandingUpdateInput>;
+};
+
+export type SkillListParentUpdateManyInlineInput = {
+  /** Connect multiple existing SkillListParent documents */
+  connect?: InputMaybe<Array<SkillListParentConnectInput>>;
+  /** Create and connect multiple SkillListParent documents */
+  create?: InputMaybe<Array<SkillListParentCreateInput>>;
+  /** Delete multiple SkillListParent documents */
+  delete?: InputMaybe<Array<SkillListParentWhereUniqueInput>>;
+  /** Disconnect multiple SkillListParent documents */
+  disconnect?: InputMaybe<Array<SkillListParentWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing SkillListParent documents */
+  set?: InputMaybe<Array<SkillListParentWhereUniqueInput>>;
+  /** Update multiple SkillListParent documents */
+  update?: InputMaybe<Array<SkillListParentUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple SkillListParent documents */
+  upsert?: InputMaybe<Array<SkillListParentUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type SkillListParentUpdateManyWithNestedWhereInput = {
+  Landing?: InputMaybe<LandingUpdateManyWithNestedWhereInput>;
+};
+
+export type SkillListParentUpdateOneInlineInput = {
+  /** Connect existing SkillListParent document */
+  connect?: InputMaybe<SkillListParentWhereUniqueInput>;
+  /** Create and connect one SkillListParent document */
+  create?: InputMaybe<SkillListParentCreateInput>;
+  /** Delete currently connected SkillListParent document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Disconnect currently connected SkillListParent document */
+  disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Update single SkillListParent document */
+  update?: InputMaybe<SkillListParentUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single SkillListParent document */
+  upsert?: InputMaybe<SkillListParentUpsertWithNestedWhereUniqueInput>;
+};
+
+export type SkillListParentUpdateWithNestedWhereUniqueInput = {
+  Landing?: InputMaybe<LandingUpdateWithNestedWhereUniqueInput>;
+};
+
+export type SkillListParentUpsertWithNestedWhereUniqueInput = {
+  Landing?: InputMaybe<LandingUpsertWithNestedWhereUniqueInput>;
+};
+
+export type SkillListParentWhereInput = {
+  Landing?: InputMaybe<LandingWhereInput>;
+};
+
+export type SkillListParentWhereUniqueInput = {
+  Landing?: InputMaybe<LandingWhereUniqueInput>;
+};
+
 export type SkillListUpdateInput = {
+  /** category input for default locale (en) */
   category?: InputMaybe<Scalars['String']['input']>;
   /** description input for default locale (en) */
   description?: InputMaybe<Scalars['String']['input']>;
   /** Manage document localizations */
   localizations?: InputMaybe<SkillListUpdateLocalizationsInput>;
+  /** subItem input for default locale (en) */
+  subItem?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type SkillListUpdateLocalizationDataInput = {
+  category?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  subItem?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type SkillListUpdateLocalizationInput = {
@@ -7520,16 +7705,32 @@ export type SkillListUpdateLocalizationsInput = {
   upsert?: InputMaybe<Array<SkillListUpsertLocalizationInput>>;
 };
 
+export type SkillListUpdateManyInlineInput = {
+  /** Create and connect multiple SkillList component instances */
+  create?: InputMaybe<Array<SkillListCreateWithPositionInput>>;
+  /** Delete multiple SkillList documents */
+  delete?: InputMaybe<Array<SkillListWhereUniqueInput>>;
+  /** Update multiple SkillList component instances */
+  update?: InputMaybe<Array<SkillListUpdateWithNestedWhereUniqueAndPositionInput>>;
+  /** Upsert multiple SkillList component instances */
+  upsert?: InputMaybe<Array<SkillListUpsertWithNestedWhereUniqueAndPositionInput>>;
+};
+
 export type SkillListUpdateManyInput = {
+  /** category input for default locale (en) */
   category?: InputMaybe<Scalars['String']['input']>;
   /** description input for default locale (en) */
   description?: InputMaybe<Scalars['String']['input']>;
   /** Optional updates to localizations */
   localizations?: InputMaybe<SkillListUpdateManyLocalizationsInput>;
+  /** subItem input for default locale (en) */
+  subItem?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type SkillListUpdateManyLocalizationDataInput = {
+  category?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  subItem?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type SkillListUpdateManyLocalizationInput = {
@@ -7547,6 +7748,17 @@ export type SkillListUpdateManyWithNestedWhereInput = {
   data: SkillListUpdateManyInput;
   /** Document search */
   where: SkillListWhereInput;
+};
+
+export type SkillListUpdateOneInlineInput = {
+  /** Create and connect one SkillList document */
+  create?: InputMaybe<SkillListCreateInput>;
+  /** Delete currently connected SkillList document */
+  delete?: InputMaybe<Scalars['Boolean']['input']>;
+  /** Update single SkillList document */
+  update?: InputMaybe<SkillListUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single SkillList document */
+  upsert?: InputMaybe<SkillListUpsertWithNestedWhereUniqueInput>;
 };
 
 export type SkillListUpdateWithNestedWhereUniqueAndPositionInput = {
@@ -7661,6 +7873,16 @@ export type SkillListWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  subItem?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  subItem_contains_all?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  subItem_contains_none?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  subItem_contains_some?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  subItem_not?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 /** References SkillList record uniquely */
@@ -9277,6 +9499,14 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
+export type CapstoneDataQueryVariables = Exact<{
+  locales: Array<Locale> | Locale;
+  includeCurrent: Scalars['Boolean']['input'];
+}>;
+
+
+export type CapstoneDataQuery = { __typename?: 'Query', capstones: Array<{ __typename?: 'Capstone', reference?: string | null, logo?: { __typename?: 'Media', media?: any | null, localizations: Array<{ __typename: 'Media', locale: Locale, altText?: string | null }> } | null, theoryImg?: { __typename?: 'Media', media?: any | null, localizations: Array<{ __typename: 'Media', locale: Locale, altText?: string | null }> } | null, valueList: Array<{ __typename?: 'ValueCard', name?: string | null, category?: string | null, definition?: string | null, example?: string | null, related: Array<string> }>, teamInfo: Array<{ __typename?: 'PhotoWTextCard', image?: { __typename?: 'Media', media?: any | null, localizations: Array<{ __typename?: 'Media', locale: Locale, altText?: string | null }> } | null, buttons: Array<{ __typename?: 'Button', link: string, buttonId?: string | null, localizations: Array<{ __typename?: 'Button', text?: string | null }> }>, localizations: Array<{ __typename?: 'PhotoWTextCard', description?: string | null }> }>, specialThanks: Array<{ __typename?: 'PhotoWTextCard', image?: { __typename?: 'Media', media?: any | null, localizations: Array<{ __typename?: 'Media', locale: Locale, altText?: string | null }> } | null, buttons: Array<{ __typename?: 'Button', link: string, buttonId?: string | null, localizations: Array<{ __typename?: 'Button', text?: string | null }> }>, localizations: Array<{ __typename?: 'PhotoWTextCard', description?: string | null }> }>, localizations: Array<{ __typename?: 'Capstone', title?: string | null, introduction?: string | null, theoryIntro: Array<string>, valueDefinition: Array<string>, systemOverview?: string | null, productUsage: Array<string>, alertUsage?: string | null }> }> };
+
 export type LandingDataQueryVariables = Exact<{
   locales: Array<Locale> | Locale;
   includeCurrent: Scalars['Boolean']['input'];
@@ -9294,5 +9524,6 @@ export type NavbarDataQueryVariables = Exact<{
 export type NavbarDataQuery = { __typename?: 'Query', navbars: Array<{ __typename?: 'Navbar', logo?: { __typename?: 'Media', media?: any | null, localizations: Array<{ __typename?: 'Media', locale: Locale, altText?: string | null }> } | null, navlink: Array<{ __typename?: 'Button', link: string, buttonId?: string | null, localizations: Array<{ __typename?: 'Button', locale: Locale, text?: string | null }> }>, navbtn: Array<{ __typename?: 'Button', link: string, buttonId?: string | null, localizations: Array<{ __typename?: 'Button', locale: Locale, text?: string | null }> }> }> };
 
 
+export const CapstoneDataDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"CapstoneData"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locales"}},"type":{"kind":"NonNullType","type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Locale"}}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"capstones"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"logo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"media"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"theoryImg"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"media"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"__typename"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"valueList"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"category"}},{"kind":"Field","name":{"kind":"Name","value":"definition"}},{"kind":"Field","name":{"kind":"Name","value":"example"}},{"kind":"Field","name":{"kind":"Name","value":"related"}}]}},{"kind":"Field","name":{"kind":"Name","value":"teamInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"media"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}},{"kind":"Field","name":{"kind":"Name","value":"buttonId"}}]}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"specialThanks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"media"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"buttons"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}},{"kind":"Field","name":{"kind":"Name","value":"buttonId"}}]}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"reference"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"introduction"}},{"kind":"Field","name":{"kind":"Name","value":"theoryIntro"}},{"kind":"Field","name":{"kind":"Name","value":"valueDefinition"}},{"kind":"Field","name":{"kind":"Name","value":"systemOverview"}},{"kind":"Field","name":{"kind":"Name","value":"productUsage"}},{"kind":"Field","name":{"kind":"Name","value":"alertUsage"}}]}}]}}]}}]} as unknown as DocumentNode<CapstoneDataQuery, CapstoneDataQueryVariables>;
 export const LandingDataDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"LandingData"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locales"}},"type":{"kind":"NonNullType","type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Locale"}}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"landings"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"greet"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"role"}},{"kind":"Field","name":{"kind":"Name","value":"identity"}}]}},{"kind":"Field","name":{"kind":"Name","value":"socialMedia"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}},{"kind":"Field","name":{"kind":"Name","value":"buttonId"}}]}},{"kind":"Field","name":{"kind":"Name","value":"icon"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"media"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}}]}}]}}]}}]}}]} as unknown as DocumentNode<LandingDataQuery, LandingDataQueryVariables>;
 export const NavbarDataDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"NavbarData"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"locales"}},"type":{"kind":"NonNullType","type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Locale"}}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"navbars"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"logo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"media"}},{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"altText"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"navlink"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}},{"kind":"Field","name":{"kind":"Name","value":"buttonId"}}]}},{"kind":"Field","name":{"kind":"Name","value":"navbtn"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"localizations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"locales"},"value":{"kind":"Variable","name":{"kind":"Name","value":"locales"}}},{"kind":"Argument","name":{"kind":"Name","value":"includeCurrent"},"value":{"kind":"Variable","name":{"kind":"Name","value":"includeCurrent"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"locale"}},{"kind":"Field","name":{"kind":"Name","value":"text"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}},{"kind":"Field","name":{"kind":"Name","value":"buttonId"}}]}}]}}]}}]} as unknown as DocumentNode<NavbarDataQuery, NavbarDataQueryVariables>;

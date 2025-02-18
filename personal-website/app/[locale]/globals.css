@@ -10,6 +10,30 @@
     font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 .banner{
     background-image:url('https://res.cloudinary.com/mozcloud/image/upload/v1736809392/Personal/background.png');
     background-size: cover;

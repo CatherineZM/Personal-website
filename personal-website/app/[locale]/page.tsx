@@ -1,7 +1,3 @@
-import Menu from "@/components/utils/navbar";
-import getNavData from "@/modules/fetchData/getNavData";
-import getLandData from "@/modules/fetchData/getLandData";
-import Banner from "@/components/homePage/banner";
 import { Locale } from "@/modules/gql/graphql";
 
 interface PageProps {
@@ -20,14 +16,8 @@ export default async function Home({params}: PageProps): Promise<JSX.Element> {
         ? (params.locale as Locale)
         : Locale.En;
 
-    // Fetch localized data
-    const navData = await getNavData(locale);
-    const landData = await getLandData(locale);
-
     return (
         <div className="">
-            <Menu data={navData.navData} locale={locale} />
-            <Banner data={landData.landData} locale={locale} />
             <div className="bg-egg flex flex-row"></div>
         </div>
     );
