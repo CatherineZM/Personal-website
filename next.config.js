@@ -10,7 +10,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 // };
 
 const nextConfig = withBundleAnalyzer({
-    output: process.env.EXPORT_MODE === 'true' ? 'export' : undefined,
+    output: 'export',
     experimental: {
         optimizePackageImports: [
             'framer-motion',
