@@ -1,65 +1,41 @@
 {
-  "name": "mozhou",
+  "name": "personal-website",
   "version": "0.1.0",
   "private": true,
-  "homepahe": ".",
-  "dependencies": {
-    "@emotion/react": "^11.11.3",
-    "@emotion/styled": "^11.11.0",
-    "@formspree/react": "^2.5.1",
-    "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.16.7",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@weknow/react-bubble-chart-d3": "^1.0.4",
-    "autoprefixer": "^10.4.20",
-    "bootstrap": "^5.2.0-beta1",
-    "chart.js": "^4.4.1",
-    "codegen": "^0.1.0",
-    "dotenv": "^16.4.7",
-    "graphql-request": "^7.1.2",
-    "lenis": "^1.1.20",
-    "postcss": "^8.5.1",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.1.1",
-    "react-chartjs-2": "^5.2.0",
-    "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1",
-    "react-iframe": "^1.8.5",
-    "react-material-ui-carousel": "^3.4.2",
-    "react-pdf": "^5.7.0",
-    "react-router-dom": "^6.2.1",
-    "react-scripts": "^5.0.1",
-    "react-scroll": "^1.8.9",
-    "react-tooltip-bubble-chart": "^1.0.37",
-    "react-vertical-timeline-component": "^3.6.0",
-    "reactflow": "^11.6.1",
-    "tailwindcss": "^3.4.17",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@contentful/rich-text-html-renderer": "^17.0.0",
+    "@graphcms/rich-text-react-renderer": "^0.6.2",
+    "@next/bundle-analyzer": "^15.1.5",
+    "autoprefixer": "^10.4.21",
+    "framer-motion": "^11.18.1",
+    "graphql": "^16.10.0",
+    "gsap": "^3.12.7",
+    "lenis": "^1.1.20",
+    "next": "14.2.14",
+    "next-cloudinary": "^6.16.0",
+    "next-i18n-router": "^5.5.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.5.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@graphql-codegen/cli": "5.0.3",
+    "@graphql-codegen/client-preset": "4.5.1",
+    "@graphql-codegen/introspection": "4.0.3",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.14",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.7.3"
   }
 }
