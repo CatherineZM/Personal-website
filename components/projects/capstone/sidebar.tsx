@@ -1,7 +1,7 @@
 "use client";
 
 // external library
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
 
@@ -42,41 +42,41 @@ interface PageProps {
 export default function Sidebar(props: PageProps): JSX.Element {
     const { sections, logo, locale } = props;
 
-    const useMediaQuery = (width: number): boolean => {
-        const [targetReached, setTargetReached] = useState(false);
+    // const useMediaQuery = (width: number): boolean => {
+    //     const [targetReached, setTargetReached] = useState(false);
 
-        const updateTarget = useCallback((e: MediaQueryListEvent) => {
-            if (e.matches) {
-                setTargetReached(true);
-            } else {
-                setTargetReached(false);
-            }
-        }, []);
+    //     const updateTarget = useCallback((e: MediaQueryListEvent) => {
+    //         if (e.matches) {
+    //             setTargetReached(true);
+    //         } else {
+    //             setTargetReached(false);
+    //         }
+    //     }, []);
 
-        useEffect(() => {
-            const media = window.matchMedia(`(max-width: ${width}px)`);
-            media.addEventListener("change", updateTarget);
+    //     useEffect(() => {
+    //         const media = window.matchMedia(`(max-width: ${width}px)`);
+    //         media.addEventListener("change", updateTarget);
 
-            if (media.matches) {
-                setTargetReached(true);
-            }
+    //         if (media.matches) {
+    //             setTargetReached(true);
+    //         }
 
-            return () => media.removeEventListener("change", updateTarget);
-        }, [width, updateTarget]);
+    //         return () => media.removeEventListener("change", updateTarget);
+    //     }, [width, updateTarget]);
 
-        return targetReached;
-    };
+    //     return targetReached;
+    // };
 
-    const isBreakpoint = useMediaQuery(1060);
+    // const isBreakpoint = useMediaQuery(1060);
 
-    const menuVariants = {
-        hidden: {
-            opacity: 0,
-        },
-        visible: {
-            opacity: 1,
-        },
-    };
+    // const menuVariants = {
+    //     hidden: {
+    //         opacity: 0,
+    //     },
+    //     visible: {
+    //         opacity: 1,
+    //     },
+    // };
 
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [itemOpen, setItemOpen] = useState(false);
@@ -97,11 +97,11 @@ export default function Sidebar(props: PageProps): JSX.Element {
         };
     }, [isMenuOpen]);
 
-    const styleList = {
-        transparent: {
-            background: "bg-transparent",
-        },
-    };
+    // const styleList = {
+    //     transparent: {
+    //         background: "bg-transparent",
+    //     },
+    // };
 
     return (
         <div className="sticky z-40 flex flex-col top-[120px] h-[calc(100vh-120px)] border-r-[1px] border-r-charcoal/50 overflow-hidden">

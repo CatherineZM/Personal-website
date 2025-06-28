@@ -1,7 +1,7 @@
 "use client";
 
 // external library
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, useAnimation } from "framer-motion";
 
@@ -43,30 +43,30 @@ export default function Menu(props: NavProps): JSX.Element {
     const currentPath = usePathname();
     const [scrolled, setScrolled] = useState(false);
 
-    const useMediaQuery = (width: number): boolean => {
-        const [targetReached, setTargetReached] = useState(false);
+    // const useMediaQuery = (width: number): boolean => {
+    //     const [targetReached, setTargetReached] = useState(false);
 
-        const updateTarget = useCallback((e: MediaQueryListEvent) => {
-            if (e.matches) {
-                setTargetReached(true);
-            } else {
-                setTargetReached(false);
-            }
-        }, []);
+    //     const updateTarget = useCallback((e: MediaQueryListEvent) => {
+    //         if (e.matches) {
+    //             setTargetReached(true);
+    //         } else {
+    //             setTargetReached(false);
+    //         }
+    //     }, []);
 
-        useEffect(() => {
-            const media = window.matchMedia(`(max-width: ${width}px)`);
-            media.addEventListener("change", updateTarget);
+    //     useEffect(() => {
+    //         const media = window.matchMedia(`(max-width: ${width}px)`);
+    //         media.addEventListener("change", updateTarget);
 
-            if (media.matches) {
-                setTargetReached(true);
-            }
+    //         if (media.matches) {
+    //             setTargetReached(true);
+    //         }
 
-            return () => media.removeEventListener("change", updateTarget);
-        }, [width, updateTarget]);
+    //         return () => media.removeEventListener("change", updateTarget);
+    //     }, [width, updateTarget]);
 
-        return targetReached;
-    };
+    //     return targetReached;
+    // };
 
     useEffect(() => {
         const handleScroll = (): void => {
@@ -81,7 +81,7 @@ export default function Menu(props: NavProps): JSX.Element {
         };
     }, []);
 
-    const isBreakpoint = useMediaQuery(1060);
+    // const isBreakpoint = useMediaQuery(1060);
 
     const menuVariants = {
         hidden: {
@@ -116,12 +116,12 @@ export default function Menu(props: NavProps): JSX.Element {
         };
     }, [isMenuOpen]);
 
-    const styleList = {
-        transparent: {
-            background: 'bg-transparent',
+    // const styleList = {
+    //     transparent: {
+    //         background: 'bg-transparent',
 
-        }
-    }
+    //     }
+    // }
 
     const normalizePath = (path: string) => {
         const pathWithoutLocale = path.replace(/^\/(en|zh)/, "");
@@ -131,9 +131,9 @@ export default function Menu(props: NavProps): JSX.Element {
             : `/${pathWithoutLocale}`;
     };
 
-    const extractLocale = (path: string) => {
-        return path.split("/")[1];
-    }
+    // const extractLocale = (path: string) => {
+    //     return path.split("/")[1];
+    // }
 
     return (
         <div

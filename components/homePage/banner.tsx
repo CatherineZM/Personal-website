@@ -38,23 +38,27 @@ export default function Banner(props: BannerProps): JSX.Element {
     const { data, locale } = props;
     const { greet, localizations, socialMedia, icon } = data;
 
-    const displayIdentity = (list: Array<string> | undefined): any =>{
-        if (!list) {
-            return;
-        }
+    const DisplayIdentity = (
+        list: Array<string> | undefined
+    ): JSX.Element | null => {
         const [index, setIndex] = useState(0);
+
         useEffect(() => {
             const id = setInterval(() => {
                 setIndex((state) => {
-                    if (state >= list.length - 1) return 0;
+                    if (!list || state >= list.length - 1) return 0;
                     return state + 1;
                 });
             }, 2000);
             return () => clearInterval(id);
-        }, []);
+        }, [list]);
+
+        if (!list) return null;
 
         return (
-            <div style={{ position: "relative" }} className='basis-1/3 w-fit text-blue-orchid font-bold'>
+            <div
+                style={{ position: "relative" }}
+                className="basis-1/3 w-fit text-blue-orchid font-bold">
                 <AnimatePresence>
                     <motion.div
                         key={index}
@@ -69,7 +73,7 @@ export default function Banner(props: BannerProps): JSX.Element {
                 </AnimatePresence>
             </div>
         );
-    }
+    };
 
     const renderSocialBtn = (name: string | null | undefined): any => {
         if(!name){return}
@@ -134,7 +138,7 @@ export default function Banner(props: BannerProps): JSX.Element {
                 </h4>
                 <div className="flex flex-row text-2xl capitalize w-full justify-center lg:justify-start">
                     {localizations.find((i) => i.locale === locale)?.role}{" "}
-                    {displayIdentity(
+                    {DisplayIdentity(
                         localizations.find((i) => i.locale === locale)?.identity
                     )}
                 </div>

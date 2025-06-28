@@ -87,7 +87,7 @@ interface Props {
 }
 
 export default function CapstoneContent( props: Props ): JSX.Element { 
-    const { theoryImg, valueCardBg, valueType, valueList, teamInfo, specialThanks, localizations, locale } = props;
+    const { theoryImg, valueCardBg, valueList, localizations, locale } = props;
 
     return (
         <div className="w-full flex flex-col gap-y-4">
@@ -160,7 +160,7 @@ export default function CapstoneContent( props: Props ): JSX.Element {
                     }
                 />
                 <div className='grid grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-4 w-full'>
-                    {valueList.map((item) => <ValueCard valueType={item.valueType} valueCardBg={valueCardBg} localizations={item.localizations} locale={locale}/>)}
+                    {valueList.map((item, index) => <ValueCard key={index} valueType={item.valueType} valueCardBg={valueCardBg} localizations={item.localizations} locale={locale}/>)}
                 </div>
             </div>
         </div>

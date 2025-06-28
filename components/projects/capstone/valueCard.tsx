@@ -1,5 +1,5 @@
 // internal components
-import CldImage from "@/components/utils/cldImage";
+// import CldImage from "@/components/utils/cldImage";
 
 interface Props {
     valueType: Array<string>;

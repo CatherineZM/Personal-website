@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import TopLeftCloud from "@/public/svg/top-left";
 import TopMiddleCloud from "@/public/svg/top-mid";
 import TopRightCloud from "@/public/svg/top-right";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
 export default function CloudScene() {
 
