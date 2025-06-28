@@ -1,0 +1,41 @@
+name: Production Deploy
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # Using LTS version
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Build the project
+        run: npm run build
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+          NEXT_HYGRAPH_TOKEN: ${{ secrets.NEXT_HYGRAPH_TOKEN }}
+          NEXT_PUBLIC_HYGRAPH_URL: ${{ secrets.NEXT_PUBLIC_HYGRAPH_URL }}
+          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+
+      - name: Deploy to cPanel 🚀
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_ACCOUNT }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/
+          server-dir: ./
+          dry-run: false
